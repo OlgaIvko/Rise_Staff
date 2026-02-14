@@ -160,7 +160,6 @@ class SideDemoModal {
       phone: document.getElementById("sidePhone")?.value || "",
       email: document.getElementById("sideEmail")?.value || "",
       company: document.getElementById("sideCompany")?.value || "",
-      agents: document.getElementById("sideAgents")?.value || "",
     };
 
     console.log("Отправка формы:", formData);
