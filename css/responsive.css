@@ -1,0 +1,127 @@
+/* Additional responsive styles */
+
+/* Large desktops */
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+
+  .hero-title {
+    font-size: 4rem;
+  }
+}
+
+/* Tablets portrait */
+@media (max-width: 768px) and (orientation: portrait) {
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .principle {
+    margin-bottom: 40px;
+  }
+}
+
+/* Mobile landscape */
+@media (max-width: 576px) and (orientation: landscape) {
+  .btn-primary,
+  .btn-secondary {
+    padding: 12px 20px;
+    font-size: 1rem;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 400px) {
+  .hero-title {
+    font-size: 1.8rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .cta-title {
+    font-size: 1.8rem;
+  }
+
+  .problem-card,
+  .principle-visual,
+  .step-detail {
+    padding: 20px;
+  }
+
+  .stat-number {
+    font-size: 2.5rem;
+  }
+}
+
+/* High DPI screens */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .hero-background::before {
+    background:
+      radial-gradient(
+        circle at 20% 30%,
+        rgba(0, 212, 170, 0.2) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        circle at 80% 70%,
+        rgba(99, 91, 255, 0.15) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        circle at 40% 80%,
+        rgba(255, 107, 107, 0.15) 0%,
+        transparent 50%
+      );
+  }
+}
+
+/* Print styles */
+@media print {
+  .navbar,
+  .hero-scroll,
+  .cta-form,
+  .footer-social,
+  .menu-toggle {
+    display: none !important;
+  }
+
+  body {
+    color: black !important;
+    background: white !important;
+  }
+
+  .hero,
+  .problems,
+  .solution,
+  .process,
+  .stats,
+  .demo,
+  .cta,
+  .footer {
+    padding: 20px 0 !important;
+    background: white !important;
+    color: black !important;
+  }
+
+  .hero-title,
+  .section-title,
+  .cta-title {
+    color: black !important;
+  }
+
+  .highlight {
+    color: black !important;
+  }
+
+  .highlight::after {
+    display: none;
+  }
+
+  a {
+    color: black !important;
+    text-decoration: underline;
+  }
+}

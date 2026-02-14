@@ -1,0 +1,1210 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rise_Staff — Система для найма и роста риелторов</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/hero.css" />
+    <link rel="stylesheet" href="css/solution.css" />
+    <link rel="stylesheet" href="css/modal.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
+  </head>
+  <body>
+    <!-- Loading -->
+    <div class="loader">
+      <div class="loader__content">
+        <div class="loader__logo">
+          <img src="img/logo.png" alt="Rise_Staff" width="50px" height="60px" />
+        </div>
+        <div class="loader__text">Для риелторских агентств</div>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <nav class="nav">
+          <a href="#" class="nav__logo">
+            <img
+              src="img/logo.png"
+              alt="Rise_Staff"
+              width="50px"
+              height="60px"
+            />
+          </a>
+
+          <div class="nav__menu">
+            <a href="#hero" class="nav__link">Главная</a>
+            <a href="#problems" class="nav__link">Проблемы</a>
+            <a href="#solution" class="nav__link">Решение</a>
+            <a href="#demo" class="nav__link">Демо</a>
+            <a href="#contact" class="nav__link nav__link--primary"
+              >Попробовать</a
+            >
+          </div>
+
+          <button class="nav__toggle">
+            <span class="nav__toggle-line"></span>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+      <div class="hero__wrapper">
+        <div class="hero__text">
+          <h1 class="hero__title">
+            Наняли риелтора,<br />
+            а он <span class="hero__title-accent">ушел через месяц</span>?
+          </h1>
+          <p class="hero__subtitle">
+            Rise_Staff — система, которая помогает новым риелторам быстрее начать
+            продавать, а вам — не терять деньги на найме
+          </p>
+
+          <!-- Статистика -->
+          <div class="hero__stats">
+            <div class="hero__stat">
+              <div class="hero__stat-number">2×</div>
+              <div class="hero__stat-text">быстрее начинают продавать</div>
+            </div>
+            <div class="hero__stat">
+              <div class="hero__stat-number">-40%</div>
+              <div class="hero__stat-text">текучки в первые 3 месяца</div>
+            </div>
+            <div class="hero__stat">
+              <div class="hero__stat-number">+70%</div>
+              <div class="hero__stat-text">
+                времени ТОП-риелторов на продажах
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Правая часть (70%) - Карточки -->
+        <div class="hero__cards">
+          <div class="hero-cards__container">
+            <!-- Карточка 1 -->
+            <div class="hero-card hero-card--active" data-card="1">
+              <div class="hero-card__image">
+                <img
+                  src="img/foto2.png"
+                  alt="Дашборд руководителя"
+                  class="hero-card__img"
+                />
+              </div>
+            </div>
+
+            <!-- Карточка 2 -->
+            <div class="hero-card" data-card="2">
+              <div class="hero-card__image">
+                <img
+                  src="img/foto3.png"
+                  alt="Карта развития"
+                  class="hero-card__img"
+                />
+              </div>
+            </div>
+
+            <!-- Карточка 3 -->
+            <div class="hero-card" data-card="3">
+              <div class="hero-card__image">
+                <img
+                  src="img/foto4.png"
+                  alt="Система заданий"
+                  class="hero-card__img"
+                />
+              </div>
+            </div>
+             <div class="hero-cards__container">
+            <!-- Карточка 4 -->
+            <div class="hero-card hero-card--active" data-card="1">
+              <div class="hero-card__image">
+                <img
+                  src="img/grafik.png"
+                  alt="Дашборд руководителя"
+                  class="hero-card__img"
+                />
+              </div>
+            </div>
+
+             <!-- Карточка 5 -->
+            <div class="hero-card hero-card--active" data-card="1">
+              <div class="hero-card__image">
+                <img
+                  src="img/rekomen.png"
+                  alt="Дашборд руководителя"
+                  class="hero-card__img"
+                />
+              </div>
+            </div>
+             <!-- Карточка 6 -->
+            <div class="hero-card hero-card--active" data-card="1">
+              <div class="hero-card__image">
+                <img
+                  src="img/rezume.png"
+                  alt="Дашборд руководителя"
+                  class="hero-card__img"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Problems Section -->
+    <section class="problems" id="problems">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-header__title">
+            Сколько <span class="section-header__accent">денег уходит</span>
+            из-за проблем с наймом?
+          </h2>
+          <p class="section-header__subtitle">
+            Реальные потери риелторских агентств
+          </p>
+        </div>
+
+        <div class="problems__grid">
+          <!-- Problem 1 -->
+          <div class="problem-card">
+            <div class="problem-card__icon">
+              <i class="fas fa-money-bill-wave"></i>
+            </div>
+
+            <div class="problem-card__content">
+              <h3 class="problem-card__title">500 000 ₸ на одного риелтора</h3>
+              <p class="problem-card__description">
+                Тратите на рекламу, собеседования, обучение — а он уходит через
+                месяц. Деньги и время на ветер.
+              </p>
+
+              <div class="problem-card__details">
+                <div class="problem-card__detail">
+                  <span class="problem-card__detail-label"
+                    >Реклама вакансии:</span
+                  >
+                  <span class="problem-card__detail-value">100 000 ₸</span>
+                </div>
+                <div class="problem-card__detail">
+                  <span class="problem-card__detail-label"
+                    >10 собеседований:</span
+                  >
+                  <span class="problem-card__detail-value">150 000 ₸</span>
+                </div>
+                <div class="problem-card__detail">
+                  <span class="problem-card__detail-label">Обучение:</span>
+                  <span class="problem-card__detail-value">250 000 ₸</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Problem 2 -->
+          <div class="problem-card">
+            <div class="problem-card__icon">
+              <i class="fas fa-user-tie"></i>
+            </div>
+
+            <div class="problem-card__content">
+              <h3 class="problem-card__title">ТОП-риелтор стал учителем</h3>
+              <p class="problem-card__description">
+                Ваш лучший продавец тратит 20 часов в неделю на обучение
+                новичков вместо того, чтобы закрывать сделки.
+              </p>
+
+              <div class="problem-card__loss">
+                <div class="problem-card__loss-item">
+                  <i class="fas fa-times-circle"></i>
+                  <span>Упущено 3-4 сделки в месяц</span>
+                </div>
+                <div class="problem-card__loss-item">
+                  <i class="fas fa-times-circle"></i>
+                  <span>Потеряно ~1 200 000 ₸ выручки</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Problem 3 -->
+          <div class="problem-card">
+            <div class="problem-card__icon">
+              <i class="fas fa-chart-line-down"></i>
+            </div>
+
+            <div class="problem-card__content">
+              <h3 class="problem-card__title">Команда не растет</h3>
+              <p class="problem-card__description">
+                Хотели увеличить команду в 2 раза за год, а выросли на 30%.
+                Новые риелторы долго "раскачиваются" и не выходят на план.
+              </p>
+
+              <div class="problem-card__metrics">
+                <div class="problem-card__metric">
+                  <div class="problem-card__metric-label">
+                    До первой сделки:
+                  </div>
+                  <div class="problem-card__metric-value">4-6 месяцев</div>
+                </div>
+                <div class="problem-card__metric">
+                  <div class="problem-card__metric-label">
+                    Текучка за 3 месяца:
+                  </div>
+                  <div class="problem-card__metric-value">35-45%</div>
+                </div>
+                <div class="problem-card__metric">
+                  <div class="problem-card__metric-label">Рост за год:</div>
+                  <div class="problem-card__metric-value">
+                    +30% вместо +100%
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="problems__summary">
+          <div class="summary-card">
+            <div class="summary-card__icon">
+              <i class="fas fa-calculator"></i>
+            </div>
+            <div class="summary-card__content">
+              <h3 class="summary-card__title">
+                Общие потери агентства за год:
+              </h3>
+              <div class="summary-card__amount">5-10 миллионов тенге</div>
+              <p class="summary-card__note">
+                <i class="fas fa-exclamation-circle"></i>
+                И это без учета упущенной прибыли от несделанных сделок
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Solution Section - Три отдельные карточки -->
+    <section class="solution" id="solution">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-header__title">
+            Как <span class="section-header__accent">Rise_Staff</span>
+            решает эти проблемы?
+          </h2>
+          <p class="section-header__subtitle">
+            Простая система для быстрого роста новых риелторов
+          </p>
+        </div>
+
+        <!-- Три карточки в ряд -->
+        <div class="solution-grid">
+          <!-- Карточка 1 -->
+          <div class="solution-grid__card">
+            <div class="solution-grid__visual">
+              <img
+                src="img/hek.png"
+                alt="Отбор по делам"
+                class="solution-grid__img"
+              />
+              <div class="solution-grid__badge">Шаг 1</div>
+              <div class="solution-grid__stat">
+                <span class="solution-grid__stat-value">-70%</span>
+                <span class="solution-grid__stat-label">времени на отбор</span>
+              </div>
+            </div>
+            <div class="solution-grid__content">
+              <h3 class="solution-grid__title">
+                Отбор по делам, а не по словам
+              </h3>
+              <p class="solution-grid__description">
+                Кандидаты выполняют реальные задания: ищут объекты, работают с
+                клиентами, ведут переговоры.
+              </p>
+              <div class="solution-grid__results">
+                <div class="solution-grid__result">
+                  <i class="fas fa-check-circle"></i>
+                  <span>Сокращение времени на отбор на 70%</span>
+                </div>
+                <div class="solution-grid__result">
+                  <i class="fas fa-check-circle"></i>
+                  <span>Нанимаете тех, кто уже умеет продавать</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Карточка 2 -->
+          <div class="solution-grid__card">
+            <div class="solution-grid__visual">
+              <img
+                src="img/demonst.png"
+                alt="План на 90 дней"
+                class="solution-grid__img"
+              />
+              <div class="solution-grid__badge">Шаг 2</div>
+              <div class="solution-grid__stat">
+                <span class="solution-grid__stat-value">2x</span>
+                <span class="solution-grid__stat-label"
+                  >быстрее выход на сделку</span
+                >
+              </div>
+            </div>
+            <div class="solution-grid__content">
+              <h3 class="solution-grid__title">
+                Четкий план на первые 90 дней
+              </h3>
+              <p class="solution-grid__description">
+                Новый риелтор получает пошаговый план: что изучать, какие задачи
+                выполнять.
+              </p>
+              <div class="solution-grid__results">
+                <div class="solution-grid__result">
+                  <i class="fas fa-check-circle"></i>
+                  <span>Новички в 2 раза быстрее выходят на сделку</span>
+                </div>
+                <div class="solution-grid__result">
+                  <i class="fas fa-check-circle"></i>
+                  <span>На 40% меньше увольнений в адаптацию</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Карточка 3 -->
+          <div class="solution-grid__card">
+            <div class="solution-grid__visual">
+              <img
+                src="img/marafon.png"
+                alt="Рост как игра"
+                class="solution-grid__img"
+              />
+              <div class="solution-grid__badge">Шаг 3</div>
+              <div class="solution-grid__stat">
+                <span class="solution-grid__stat-value">+85%</span>
+                <span class="solution-grid__stat-label">вовлеченности</span>
+              </div>
+            </div>
+            <div class="solution-grid__content">
+              <h3 class="solution-grid__title">Рост как игра</h3>
+              <p class="solution-grid__description">
+                Задачи, уровни, достижения. Риелтор видит свой прогресс и
+                понимает, что делать дальше.
+              </p>
+              <div class="solution-grid__results">
+                <div class="solution-grid__result">
+                  <i class="fas fa-check-circle"></i>
+                  <span>+85% вовлеченности новичков</span>
+                </div>
+                <div class="solution-grid__result">
+                  <i class="fas fa-check-circle"></i>
+                  <span>Средний чек растет на 25% быстрее</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA блок -->
+        <div class="solution__cta">
+          <!-- ... existing CTA code ... -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Solution Section -->
+    <!-- <section class="solution" id="solution">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-header__title">
+            Как <span class="section-header__accent">Rise_Staff</span>
+            решает эти проблемы?
+          </h2>
+          <p class="section-header__subtitle">
+            Простая система для быстрого роста новых риелторов
+          </p>
+        </div>
+
+
+        <div class="solution-card">
+
+          <div class="solution-card__visual">
+            <div class="solution-slider">
+
+              <div
+                class="solution-slide solution-slide--active"
+                data-solution="1"
+              >
+                <div class="solution-slide__image">
+                  <img
+                    src="img/foto3.png"
+                    alt="Отбор по делам"
+                    class="solution-slide__img"
+                  />
+                  <div class="solution-slide__overlay">
+                    <div class="solution-slide__badge">Шаг 1</div>
+                    <div class="solution-slide__stats">
+                      <div class="solution-slide__stat">
+                        <span class="solution-slide__stat-value">-70%</span>
+                        <span class="solution-slide__stat-label"
+                          >времени на отбор</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="solution-slide" data-solution="2">
+                <div class="solution-slide__image">
+                  <img
+                    src="img/foto2.png"
+                    alt="План на 90 дней"
+                    class="solution-slide__img"
+                  />
+                  <div class="solution-slide__overlay">
+                    <div class="solution-slide__badge">Шаг 2</div>
+                    <div class="solution-slide__stats">
+                      <div class="solution-slide__stat">
+                        <span class="solution-slide__stat-value">2x</span>
+                        <span class="solution-slide__stat-label"
+                          >быстрее выход на сделку</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="solution-slide" data-solution="3">
+                <div class="solution-slide__image">
+                  <img
+                    src="img/foto4.png"
+                    alt="Рост как игра"
+                    class="solution-slide__img"
+                  />
+                  <div class="solution-slide__overlay">
+                    <div class="solution-slide__badge">Шаг 3</div>
+                    <div class="solution-slide__stats">
+                      <div class="solution-slide__stat">
+                        <span class="solution-slide__stat-value">+85%</span>
+                        <span class="solution-slide__stat-label"
+                          >вовлеченности</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="solution-card__content">
+            <div class="solution-content">
+
+              <div
+                class="solution-content__item solution-content__item--active"
+                data-content="1"
+              >
+                <span class="solution-content__step">Шаг 1</span>
+                <h3 class="solution-content__title">
+                  Отбор по делам, а не по словам
+                </h3>
+                <p class="solution-content__description">
+                  Кандидаты выполняют реальные задания: ищут объекты, работают с
+                  клиентами, ведут переговоры. Вы видите, как они работают, а не
+                  как говорят.
+                </p>
+                <div class="solution-content__results">
+                  <div class="solution-content__result">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Сокращение времени на отбор на 70%</span>
+                  </div>
+                  <div class="solution-content__result">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Нанимаете тех, кто уже умеет продавать</span>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="solution-content__item" data-content="2">
+                <span class="solution-content__step">Шаг 2</span>
+                <h3 class="solution-content__title">
+                  Четкий план на первые 90 дней
+                </h3>
+                <p class="solution-content__description">
+                  Новый риелтор получает пошаговый план: что изучать, какие
+                  задачи выполнять, к кому обращаться за помощью. Нет чувства
+                  потерянности.
+                </p>
+                <div class="solution-content__results">
+                  <div class="solution-content__result">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Новички в 2 раза быстрее выходят на сделку</span>
+                  </div>
+                  <div class="solution-content__result">
+                    <i class="fas fa-check-circle"></i>
+                    <span>На 40% меньше увольнений в адаптацию</span>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="solution-content__item" data-content="3">
+                <span class="solution-content__step">Шаг 3</span>
+                <h3 class="solution-content__title">Рост как игра</h3>
+                <p class="solution-content__description">
+                  Задачи, уровни, достижения. Риелтор видит свой прогресс и
+                  понимает, что делать дальше для роста дохода. Мотивация
+                  растет, текучка падает.
+                </p>
+                <div class="solution-content__results">
+                  <div class="solution-content__result">
+                    <i class="fas fa-check-circle"></i>
+                    <span>+85% вовлеченности новичков</span>
+                  </div>
+                  <div class="solution-content__result">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Средний чек растет на 25% быстрее</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="solution-nav visually-hidden">
+              <button class="solution-nav__btn solution-nav__btn--prev">
+                <i class="fas fa-arrow-left"></i>
+              </button>
+              <div class="solution-nav__dots">
+                <button
+                  class="solution-nav__dot solution-nav__dot--active"
+                  data-solution="1"
+                ></button>
+                <button class="solution-nav__dot" data-solution="2"></button>
+                <button class="solution-nav__dot" data-solution="3"></button>
+              </div>
+              <button class="solution-nav__btn solution-nav__btn--next">
+                <i class="fas fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </section> -->
+
+    <!-- <div class="solution__cta">
+          <div class="cta-card">
+            <h3 class="cta-card__title">Результат через 3 месяца:</h3>
+
+            <div class="cta-card__results">
+              <div class="cta-card__result">
+                <div class="cta-card__result-icon">
+                  <i class="fas fa-rocket"></i>
+                </div>
+                <div class="cta-card__result-content">
+                  <div class="cta-card__result-value">2× быстрее</div>
+                  <div class="cta-card__result-label">
+                    Новичок начинает продавать
+                  </div>
+                </div>
+              </div>
+
+              <div class="cta-card__result">
+                <div class="cta-card__result-icon">
+                  <i class="fas fa-user-check"></i>
+                </div>
+                <div class="cta-card__result-content">
+                  <div class="cta-card__result-value">-40%</div>
+                  <div class="cta-card__result-label">
+                    Текучки в первые месяцы
+                  </div>
+                </div>
+              </div>
+
+              <div class="cta-card__result">
+                <div class="cta-card__result-icon">
+                  <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="cta-card__result-content">
+                  <div class="cta-card__result-value">+70% времени</div>
+                  <div class="cta-card__result-label">
+                    ТОП-риелторов на продажах
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <a href="#demo" class="btn btn--primary btn--large">
+              <i class="fas fa-play"></i>
+              Посмотреть демо системы
+            </a>
+          </div>
+        </div> -->
+
+    <!-- Demo Section -->
+    <section class="demo" id="demo">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-header__title">
+            Посмотрите <span class="section-header__accent">Rise_Staff</span>
+            в действии
+          </h2>
+          <p class="section-header__subtitle">
+            3 ключевых экрана, которые изменят ваш подход к найму
+          </p>
+        </div>
+
+        <div class="demo__content">
+          <div class="demo-slider">
+   <div class="demo-slider__track">
+  <!-- Слайд 1 - Подбор персонала через hh.ru -->
+  <div class="demo-slide demo-slide--active" data-slide="1">
+    <div class="demo-slide__content">
+      <div class="demo-slide__info">
+        <div class="demo-slide__number">01</div>
+        <h3 class="demo-slide__title">Подбор через hh.ru</h3>
+        <p class="demo-slide__description">
+          Интеграция с hh.ru для автоматического подбора персонала. Отслеживайте прогресс обучения новых сотрудников и получайте рекомендации по развитию.
+        </p>
+      </div>
+
+      <div class="demo-slide__visual">
+        <div class="demo-screen">
+          <img
+            src="img/rezume.png"
+            alt="Интеграция с hh.ru и обучение"
+            class="demo-screen__image"
+            loading="lazy"
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Слайд 2 - Автоматический подбор и аналитика -->
+  <div class="demo-slide" data-slide="2">
+    <div class="demo-slide__content">
+      <div class="demo-slide__info">
+        <div class="demo-slide__number">02</div>
+        <h3 class="demo-slide__title">Автоматический подбор</h3>
+        <p class="demo-slide__description">
+          Умный алгоритм автоматически подбирает лучших кандидатов на основе ваших требований. Детальная аналитика по каждому этапу найма.
+        </p>
+      </div>
+
+      <div class="demo-slide__visual">
+        <div class="demo-screen">
+          <img
+            src="img/rekomen.png"
+            alt="Автоматический подбор и аналитика"
+            class="demo-screen__image"
+            loading="lazy"
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Слайд 3 - Прогресс команды и цели продаж -->
+  <div class="demo-slide" data-slide="3">
+    <div class="demo-slide__content">
+      <div class="demo-slide__info">
+        <div class="demo-slide__number">03</div>
+        <h3 class="demo-slide__title">Прогресс команды</h3>
+        <p class="demo-slide__description">
+          Отслеживайте прогресс вашей команды в реальном времени. Ставьте цели по продажам и контролируйте их выполнение с наглядной аналитикой.
+        </p>
+      </div>
+
+      <div class="demo-slide__visual">
+        <div class="demo-screen">
+          <img
+            src="img/grafik.png"
+            alt="Прогресс команды и цели продаж"
+            class="demo-screen__image"
+            loading="lazy"
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+            <div class="demo-slider__controls visually-hidden">
+              <button class="demo-slider__btn demo-slider__btn--prev">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+
+              <div class="demo-slider__dots">
+                <button
+                  class="demo-slider__dot demo-slider__dot--active"
+                  data-slide="1"
+                ></button>
+                <button class="demo-slider__dot" data-slide="2"></button>
+                <button class="demo-slider__dot" data-slide="3"></button>
+              </div>
+
+              <button class="demo-slider__btn demo-slider__btn--next">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="demo-features">
+            <h3 class="demo-features__title">Что вы получаете:</h3>
+
+            <div class="demo-features__list">
+              <div class="demo-features__item">
+                <div class="demo-features__icon">
+                  <i class="fas fa-chart-bar"></i>
+                </div>
+                <div class="demo-features__content">
+                  <div class="demo-features__name">Автоматические отчеты</div>
+                  <div class="demo-features__desc">
+                    По каждому риелтору, без ручной работы
+                  </div>
+                </div>
+              </div>
+
+              <div class="demo-features__item">
+                <div class="demo-features__icon">
+                  <i class="fas fa-road"></i>
+                </div>
+                <div class="demo-features__content">
+                  <div class="demo-features__name">Готовые планы адаптации</div>
+                  <div class="demo-features__desc">
+                    Под ваше агентство и специфику
+                  </div>
+                </div>
+              </div>
+
+              <div class="demo-features__item">
+                <div class="demo-features__icon">
+                  <i class="fas fa-gamepad"></i>
+                </div>
+                <div class="demo-features__content">
+                  <div class="demo-features__name">Система геймификации</div>
+                  <div class="demo-features__desc">
+                    Мотивирует риелторов расти быстрее
+                  </div>
+                </div>
+              </div>
+
+              <!-- <div class="demo-features__item">
+                <div class="demo-features__icon">
+                  <i class="fas fa-mobile-alt"></i>
+                </div>
+                <div class="demo-features__content">
+                  <div class="demo-features__name">Мобильное приложение</div>
+                  <div class="demo-features__desc">
+                    Для риелторов, работает везде
+                  </div>
+                </div>
+              </div> -->
+            </div>
+
+            <div class="demo-features__cta">
+              <a href="#contact" class="btn btn--primary btn--large">
+                <i class="fas fa-calendar-alt"></i>
+                Забронировать демо-тур
+              </a>
+              <p class="demo-features__note">
+                <i class="fas fa-clock"></i>
+                30 минут — и вы увидите, как это работает
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="contact__content">
+          <div class="contact__info">
+            <h2 class="contact__title">
+              Готовы перестать
+              <span class="contact__title-accent">терять деньги</span>
+              на найме?
+            </h2>
+
+            <div class="contact__offer">
+              <div class="contact__offer-badge">
+                <i class="fas fa-gift"></i>
+                <span>Специальное предложение</span>
+              </div>
+
+              <h3 class="contact__offer-title">
+                Бесплатная неделя для вашего агентства
+              </h3>
+
+              <p class="contact__offer-description">
+                Настроим Rise_Staff под ваши процессы, загрузим ваши материалы
+                обучения и покажем на живых данных, как система сократит ваши
+                потери.
+              </p>
+
+              <div class="contact__offer-list">
+                <div class="contact__offer-item">
+                  <i class="fas fa-check"></i>
+                  <span>Персональная настройка под ваше агентство</span>
+                </div>
+                <div class="contact__offer-item">
+                  <i class="fas fa-check"></i>
+                  <span>Загрузка ваших обучающих материалов</span>
+                </div>
+                <div class="contact__offer-item">
+                  <i class="fas fa-check"></i>
+                  <span>Обучение ваших менеджеров</span>
+                </div>
+                <div class="contact__offer-item">
+                  <i class="fas fa-check"></i>
+                  <span>Полный доступ на 7 дней</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+    <div class="contact__form">
+  <form class="form" id="demo-form" action="https://formsubmit.co/69eac368916a7ab3afb2c9209a90efd9" method="POST">
+    <div class="form__header">
+      <h3 class="form__title">Забронировать демо-неделю</h3>
+      <p class="form__subtitle">
+        Заполните форму — мы свяжемся в течение часа
+      </p>
+    </div>
+
+    <!-- Скрытые поля для настройки FormSubmit -->
+    <input type="hidden" name="_subject" value="Новая заявка на демо-неделю с сайта">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="https://127.0.0.1:5500/thanks.html">
+    <input type="hidden" name="_autoresponse" value="Спасибо за заявку! Мы свяжемся с вами в течение часа.">
+
+    <div class="form__group">
+      <input
+        type="text"
+        class="form__input"
+        name="name"
+        placeholder="Ваше имя"
+        required
+      />
+    </div>
+
+    <div class="form__group">
+      <input
+        type="tel"
+        class="form__input"
+        name="phone"
+        placeholder="Телефон"
+        required
+      />
+    </div>
+
+    <button type="submit" class="btn btn--primary btn--block">
+      <i class="fas fa-paper-plane"></i>
+      Получить бесплатную неделю
+    </button>
+
+    <div class="form__note">
+      <i class="fas fa-shield-alt"></i>
+      <span>Ваши данные защищены. Мы не спамим.</span>
+    </div>
+  </form>
+
+  <div class="contact__alt">
+    <p class="contact__alt-text">Или напишите прямо сейчас:</p>
+    <div class="contact__alt-links">
+      <a
+        href="tel:+77777777777"
+        class="contact__alt-link contact__alt-link--phone"
+      >
+        <i class="fas fa-phone"></i>
+        Позвонить
+      </a>
+    </div>
+  </div>
+</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__content">
+          <div class="footer__main">
+            <div class="footer__logo">
+              <span class="footer__logo-text">Team</span>
+              <span class="footer__logo-accent">Rise</span>
+              <p class="footer__tagline">Риелторы растут быстрее</p>
+            </div>
+
+            <p class="footer__description">
+              Система для найма и адаптации риелторов. Помогаем агентствам
+              недвижимости расти быстрее, сокращая потери на найме и обучении.
+            </p>
+          </div>
+
+          <div class="footer__links">
+            <div class="footer__links-group">
+              <h4 class="footer__links-title">Система</h4>
+              <a href="#hero" class="footer__link">Главная</a>
+              <a href="#solution" class="footer__link">Как работает</a>
+              <a href="#demo" class="footer__link">Демо</a>
+            </div>
+
+            <div class="footer__links-group">
+              <h4 class="footer__links-title">Для кого</h4>
+              <a href="#" class="footer__link">Агентства недвижимости</a>
+              <a href="#" class="footer__link">ТОП-менеджеры</a>
+              <a href="#" class="footer__link">Владельцы бизнеса</a>
+            </div>
+          </div>
+
+          <div class="footer__contact">
+            <h4 class="footer__links-title">Контакты</h4>
+
+            <div class="footer__contact-info">
+              <div class="footer__contact-item">
+                <i class="fas fa-phone"></i>
+                <span>+7 (777) 123-45-67</span>
+              </div>
+              <div class="footer__contact-item">
+                <i class="fas fa-envelope"></i>
+                <span>hello@rise-staff.kz</span>
+              </div>
+            </div>
+
+            <div class="footer__social">
+              <a href="#" class="footer__social-link">
+                <i class="fab fa-telegram"></i>
+              </a>
+              <a href="#" class="footer__social-link">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="footer__social-link">
+                <i class="fab fa-youtube"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer__bottom">
+          <p class="footer__copyright">© 2024 Rise_Staff. Все права защищены.</p>
+          <a href="#" class="footer__bottom-link"
+            >Политика конфиденциальности</a
+          >
+        </div>
+      </div>
+    </footer>
+
+    <!-- МОДАЛЬНОЕ ОКНО ДЕМО-ВЕРСИИ (ВЫЕЗЖАЕТ СБОКУ) -->
+    <div class="side-modal-overlay" id="sideModalOverlay">
+      <div class="side-modal" id="sideModal">
+        <div class="side-modal-header">
+          <h3 class="side-modal-title">Закажите демо-версию</h3>
+          <button class="side-modal-close" id="closeSideModalBtn">
+            &times;
+          </button>
+        </div>
+
+        <div class="side-modal-body">
+          <p class="side-modal-subtitle">
+            Заполните форму и наш специалист свяжется с вами в течение 2 часов
+          </p>
+
+          <form id="sideModalForm" class="side-modal-form">
+            <div class="form-group">
+              <input
+                type="text"
+                id="sideName"
+                name="name"
+                placeholder="Ваше имя"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <input
+                type="tel"
+                id="sidePhone"
+                name="phone"
+                placeholder="Телефон"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <input
+                type="email"
+                id="sideEmail"
+                name="email"
+                placeholder="Email"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <input
+                type="text"
+                id="sideCompany"
+                name="company"
+                placeholder="Название компании (необязательно)"
+              />
+            </div>
+
+            <div class="form-group">
+              <select id="sideAgents" name="agents" required>
+                <option value="" disabled selected>Количество агентов</option>
+                <option value="1-5">1-5 агентов</option>
+                <option value="6-15">6-15 агентов</option>
+                <option value="16-30">16-30 агентов</option>
+                <option value="30+">30+ агентов</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">
+              Отправить заявку
+            </button>
+          </form>
+
+          <div
+            class="side-modal-success"
+            id="sideModalSuccess"
+            style="display: none"
+          >
+            <div class="success-icon">
+              <i class="fas fa-check-circle"></i>
+            </div>
+            <h4>Спасибо за заявку!</h4>
+            <p>Мы свяжемся с вами в ближайшее время</p>
+            <button class="btn btn-primary" id="closeSideSuccessBtn">
+              Закрыть
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- МИНИ-ВЕРСИЯ МОДАЛЬНОГО ОКНА -->
+    <div class="side-modal-mini" id="sideModalMini">
+      <div class="side-modal-mini-icon">
+        <i class="fas fa-headset"></i>
+      </div>
+      <div class="side-modal-mini-text">Нужна демо-версия?</div>
+      <div class="side-modal-mini-close" id="closeMiniBtn">
+        <i class="fas fa-times"></i>
+      </div>
+    </div>
+
+    <!-- МОДАЛЬНОЕ ОКНО ПОЛИТИКИ КОНФИДЕНЦИАЛЬНОСТИ -->
+    <div class="privacy-modal-overlay" id="privacyModalOverlay">
+      <div class="privacy-modal">
+        <div class="privacy-modal-header">
+          <h3>Политика конфиденциальности</h3>
+          <button class="privacy-modal-close" id="closePrivacyBtn">
+            &times;
+          </button>
+        </div>
+        <div class="privacy-modal-body">
+          <h4>1. Общие положения</h4>
+          <p>
+            Настоящая политика обработки персональных данных составлена в
+            соответствии с требованиями Федерального закона от 27.07.2006.
+            №152-ФЗ «О персональных данных» и определяет порядок обработки
+            персональных данных и меры по обеспечению безопасности персональных
+            данных.
+          </p>
+
+          <h4>2. Основные понятия</h4>
+          <p>
+            Персональные данные — любая информация, относящаяся к прямо или
+            косвенно определенному или определяемому физическому лицу (субъекту
+            персональных данных).
+          </p>
+
+          <h4>3. Цели обработки персональных данных</h4>
+          <p>
+            Цель обработки персональных данных — предоставление доступа к
+            демо-версии продукта, информирование пользователя посредством
+            отправки электронных писем, обработка заявок с сайта.
+          </p>
+
+          <h4>4. Правовые основания обработки персональных данных</h4>
+          <p>
+            Правовыми основаниями обработки персональных данных являются:
+            уставные документы Оператора; договоры, заключаемые между оператором
+            и субъектом персональных данных; федеральные законы, иные
+            нормативно-правовые акты.
+          </p>
+
+          <h4>5. Согласие на обработку персональных данных</h4>
+          <p>
+            Пользователь выражает свое согласие на обработку персональных данных
+            путем проставления отметки в чек-боксе "Я соглашаюсь на обработку
+            персональных данных" при отправке формы. Согласие действует
+            бессрочно с момента предоставления данных и может быть отозвано
+            путем направления письменного уведомления.
+          </p>
+
+          <div class="privacy-footer">
+            <button class="btn btn-primary" id="agreePrivacyBtn">
+              Я согласен
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COOKIE СОГЛАСИЕ -->
+    <div class="cookie-consent" id="cookieConsent">
+      <div class="cookie-content">
+        <div class="cookie-icon">
+          <i class="fas fa-cookie-bite"></i>
+        </div>
+        <div class="cookie-text">
+          <h4>Мы используем cookies</h4>
+          <p>
+            Этот сайт использует cookies для улучшения работы и анализа трафика.
+            Продолжая пользоваться сайтом, вы соглашаетесь с нашей
+            <a href="#">политикой конфиденциальности</a>.
+          </p>
+        </div>
+        <div class="cookie-buttons">
+          <button class="btn btn-primary" id="acceptCookies">Принять</button>
+          <button class="btn btn-secondary" id="declineCookies">
+            Отклонить
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/soluction.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
