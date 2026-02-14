@@ -262,4 +262,8 @@
     height: 400px;
     min-height: 350px;
   }
+
+  .hero__text {
+    border-radius: 0;
+  }
 }
