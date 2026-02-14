@@ -236,6 +236,7 @@
   .hero__wrapper {
     grid-template-columns: 1fr;
     gap: 40px;
+    margin-top: 16px;
   }
 
   .hero__text {
