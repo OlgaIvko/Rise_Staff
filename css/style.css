@@ -853,6 +853,11 @@ section {
   background: var(--bg-light);
 }
 
+.demo-slide__HH {
+  color: red;
+  font-weight: 700;
+}
+
 .demo__content {
   display: grid;
   grid-template-columns: 1fr 400px;
@@ -1405,6 +1410,111 @@ section {
 .contact__alt-link--phone:hover {
   background: #1e293b;
   transform: translateY(-3px);
+}
+
+.consent-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+}
+
+.consent-label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.consent-checkmark {
+  position: relative;
+  display: inline-block;
+  height: 22px;
+  width: 22px;
+  background-color: white;
+
+  border: 1px solid var(--bg-dark);
+  border-radius: 6px;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+  margin-top: 2px;
+}
+
+.consent-label:hover input ~ .consent-checkmark {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(42, 91, 219, 0.1);
+  transform: translateY(-50%);
+}
+
+.consent-label input:checked ~ .consent-checkmark {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  transform: translateY(-50%);
+}
+
+.consent-checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 5px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.consent-label input:checked ~ .consent-checkmark:after {
+  display: block;
+}
+
+.consent-text {
+  font-size: 0.9rem;
+  color: var(--gray);
+  line-height: 1.5;
+  flex: 1;
+}
+
+.consent-link {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.consent-link:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+/* Кнопка отправки (неактивная) */
+#formSubmitBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 480px) {
+  .consent-label {
+    gap: 10px;
+  }
+
+  .consent-text {
+    font-size: 0.85rem;
+  }
+
+  .consent-checkmark {
+    height: 20px;
+    width: 20px;
+  }
 }
 
 /* Footer */
