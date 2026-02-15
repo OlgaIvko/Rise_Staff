@@ -266,4 +266,9 @@
   .hero__text {
     border-radius: 0;
   }
+
+  .hero__wrapper {
+    margin-top: 0;
+    gap: 0;
+  }
 }
