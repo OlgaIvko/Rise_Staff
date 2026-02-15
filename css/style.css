@@ -1228,6 +1228,8 @@ section {
 /* Contact */
 .contact {
   background: white;
+  display: flex;
+  justify-content: center;
 }
 
 .contact__content {
