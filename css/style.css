@@ -851,6 +851,7 @@ section {
 /* Demo */
 .demo {
   background: var(--bg-light);
+  margin-bottom: 105px;
 }
 
 .demo-slide__HH {
@@ -925,6 +926,7 @@ section {
 }
 
 .demo-slide__visual {
+  z-index: 5;
   flex: 1;
   display: flex;
   align-items: center;
@@ -1083,6 +1085,9 @@ section {
 
 /* Адаптивность для мобильных */
 @media (max-width: 768px) {
+  .demo {
+    margin-bottom: 0;
+  }
   .demo-screen {
     border-radius: 15px;
   }
