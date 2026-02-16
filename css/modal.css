@@ -551,3 +551,124 @@
     width: 100%;
   }
 }
+/* Дополнительные стили для кнопок */
+.side-modal-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.side-modal-actions .btn {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.side-modal-actions .btn-secondary {
+  background-color: transparent;
+  color: var(--gray);
+  border: 2px solid var(--gray-light);
+}
+
+.side-modal-actions .btn-secondary:hover {
+  background-color: var(--gray-light);
+  color: var(--dark);
+  transform: translateY(-2px);
+}
+
+.side-modal-actions .btn-secondary i {
+  font-size: 0.9rem;
+}
+
+/* Кнопка закрытия в хедере */
+.side-modal-close {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.side-modal-close:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: rotate(90deg);
+}
+
+/* Адаптивность */
+@media (max-width: 480px) {
+  .side-modal-actions {
+    flex-direction: column;
+  }
+
+  .side-modal-actions .btn {
+    width: 100%;
+  }
+}
+/* Социальные кнопки */
+.social-buttons {
+  display: flex;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.social-buttons .btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+/* WhatsApp кнопка */
+.btn--whatsapp {
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  color: white;
+  border: none;
+}
+
+.btn--whatsapp:hover {
+  background: linear-gradient(135deg, #128c7e, #075e54);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -5px rgba(37, 211, 102, 0.4);
+  color: white;
+}
+
+/* Telegram кнопка */
+.btn--telegram {
+  background: linear-gradient(135deg, #0088cc, #0077b5);
+  color: white;
+  border: none;
+}
+
+.btn--telegram:hover {
+  background: linear-gradient(135deg, #0077b5, #006699);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -5px rgba(0, 136, 204, 0.4);
+  color: white;
+}
+
+/* Адаптивность */
+@media (max-width: 480px) {
+  .social-buttons {
+    flex-direction: column;
+  }
+
+  .social-buttons .btn {
+    width: 100%;
+  }
+}

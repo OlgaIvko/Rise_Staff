@@ -5,11 +5,15 @@ class SideDemoModal {
     this.overlay = document.getElementById("sideModalOverlay");
     this.modal = document.getElementById("sideModal");
     this.closeBtn = document.getElementById("closeSideModalBtn");
+    this.closeModalFormBtn = document.getElementById("closeModalFormBtn"); // НОВАЯ КНОПКА
     this.form = document.getElementById("sideModalForm");
     this.success = document.getElementById("sideModalSuccess");
     this.closeSuccessBtn = document.getElementById("closeSideSuccessBtn");
     this.miniModal = document.getElementById("sideModalMini");
     this.miniCloseBtn = document.getElementById("closeMiniBtn");
+
+    // Таймер для мини-модалки
+    this.miniTimer = null;
 
     // Проверка наличия элементов
     if (!this.overlay) {
@@ -23,10 +27,17 @@ class SideDemoModal {
   init() {
     console.log("Инициализация SideDemoModal");
 
-    // Закрытие по крестику
+    // Закрытие по крестику в хедере
     if (this.closeBtn) {
       this.closeBtn.addEventListener("click", (e) => {
         e.stopPropagation();
+        this.close();
+      });
+    }
+
+    // НОВОЕ: Закрытие по кнопке в форме
+    if (this.closeModalFormBtn) {
+      this.closeModalFormBtn.addEventListener("click", () => {
         this.close();
       });
     }
@@ -61,7 +72,6 @@ class SideDemoModal {
     // Открытие по клику на мини-версию
     if (this.miniModal) {
       this.miniModal.addEventListener("click", (e) => {
-        // Не закрываем если клик на кнопку закрытия
         if (!e.target.closest(".side-modal-mini-close")) {
           this.open();
           this.hideMini();
@@ -75,6 +85,7 @@ class SideDemoModal {
         e.stopPropagation();
         this.hideMini();
         sessionStorage.setItem("miniModalClosed", "true");
+        this.scheduleNextMini(60000); // Следующий показ через 1 минуту
       });
     }
 
@@ -92,6 +103,12 @@ class SideDemoModal {
 
     // Скрываем мини-версию когда открыто полное окно
     this.hideMini();
+
+    // Отменяем запланированный показ мини
+    if (this.miniTimer) {
+      clearTimeout(this.miniTimer);
+      this.miniTimer = null;
+    }
   }
 
   close() {
@@ -108,11 +125,10 @@ class SideDemoModal {
     }
 
     // Планируем следующее появление мини-модалки
-    this.scheduleNextMini();
+    this.scheduleNextMini(30000); // Через 30 секунд
   }
 
   scheduleNextMini(delay = 30000) {
-    // 30 секунд по умолчанию
     // Очищаем предыдущий таймер если был
     if (this.miniTimer) {
       clearTimeout(this.miniTimer);
@@ -131,7 +147,7 @@ class SideDemoModal {
       // Проверяем что полная модалка не открыта
       if (!this.isOpen() && !sessionStorage.getItem("miniModalClosed")) {
         this.showMini();
-        console.log(`Мини-модалка появится через ${delay / 1000} секунд`);
+        console.log(`Мини-модалка появилась через ${delay / 1000} секунд`);
       }
     }, delay);
   }
@@ -144,6 +160,12 @@ class SideDemoModal {
     ) {
       this.miniModal.classList.add("show");
       console.log("Мини-модалка показана");
+
+      // Автоматически скрываем через 15 секунд
+      setTimeout(() => {
+        this.hideMini();
+        this.scheduleNextMini(60000); // Следующий показ через минуту
+      }, 15000);
     }
   }
 
@@ -172,6 +194,7 @@ class SideDemoModal {
 
     // Сохраняем в localStorage
     localStorage.setItem("demoRequested", "true");
+    localStorage.setItem("demoRequestTime", new Date().toISOString());
 
     // Автоматически закрываем через 3 секунды
     setTimeout(() => {
@@ -209,7 +232,7 @@ class SideDemoModal {
           (document.documentElement.scrollHeight - window.innerHeight)) *
         100;
 
-      if (scrollPercent > 60) {
+      if (scrollPercent > 60 && !this.isOpen()) {
         this.open();
         sessionStorage.setItem("sideScrollPopup", "true");
       }
@@ -219,7 +242,7 @@ class SideDemoModal {
     document.addEventListener("mouseleave", (e) => {
       if (sessionStorage.getItem("sideExitPopup") || demoRequested) return;
 
-      if (e.clientY < 0) {
+      if (e.clientY < 0 && !this.isOpen()) {
         this.open();
         sessionStorage.setItem("sideExitPopup", "true");
       }
@@ -387,3 +410,5 @@ if (document.readyState === "loading") {
 } else {
   window.sideDemoModal = new SideDemoModal();
 }
+
+// window.telegramBot = telegramBot;

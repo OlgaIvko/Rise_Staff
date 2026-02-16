@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initScrollAnimations();
   initSolutionSteps();
   initDemoSlider();
+
   // initContactForm();
 
   console.log("Rise_Staff initialized");

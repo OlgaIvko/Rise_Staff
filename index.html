@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="css/solution.css" />
     <link rel="stylesheet" href="css/modal.css" />
     <link rel="stylesheet" href="css/benefits-section.css" />
+    <link rel="stylesheet" href="css/FAQ.css" />
+
 
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -764,91 +766,301 @@
   </div>
 </section>
 
-   <section>
+<section class="faq-section">
   <div class="container">
-    <div class="contact">
-      <div class="contact__form">
-        <form class="form" id="demo-form" action="https://formsubmit.co/69eac368916a7ab3afb2c9209a90efd9" method="POST">
-          <div class="form__header">
-            <h3 class="form__title">Забронировать демо</h3>
-            <p class="form__subtitle">
-              Заполните форму — мы свяжемся в течение часа
-            </p>
-          </div>
+    <div class="faq-container">
+      <h2 class="faq-heading section-title">
+        Часто задаваемые вопросы о <span class="highlight">Rise_Staff</span>
+        <span class="faq-heading-icon">🤔</span>
+      </h2>
 
-          <!-- Скрытые поля для настройки FormSubmit -->
-          <input type="hidden" name="_subject" value="Новая заявка на демо-неделю с сайта">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_next" value="https://127.0.0.1:5500/thanks.html">
-          <input type="hidden" name="_autoresponse" value="Спасибо за заявку! Мы свяжемся с вами в течение часа.">
-
-          <div class="form__group">
-            <input
-              type="text"
-              class="form__input"
-              name="name"
-              placeholder="Ваше имя"
-              required
-            />
-          </div>
-
-          <div class="form__group">
-            <input
-              type="tel"
-              class="form__input"
-              name="phone"
-              placeholder="Телефон"
-              required
-            />
-          </div>
-
-          <!-- ДОБАВЛЕННЫЙ ЧЕКБОКС СОГЛАСИЯ -->
-          <div class="form__group form__group--consent">
-            <label class="consent-label">
-              <input
-                type="checkbox"
-                name="consent"
-                id="formConsent"
-                required
-                class="consent-checkbox"
-              >
-              <span class="consent-checkmark"></span>
-              <span class="consent-text">
-                Я соглашаюсь на
-                <a href="#" id="showPrivacyPolicyForm" class="consent-link">
-                  обработку персональных данных
-                </a>
-                и получение информационных рассылок
-              </span>
-            </label>
-          </div>
-
-          <button type="submit" class="btn btn--primary btn--block" id="formSubmitBtn" >
-            <i class="fas fa-paper-plane"></i>
-            Написать
+      <div class="faq-accordion">
+        <!-- Вопрос 1: О геймификации -->
+        <div class="faq-item">
+          <button class="faq-question" type="button" aria-expanded="false">
+            <span class="faq-question-text">
+              <i class="fas fa-gamepad"></i>
+              Как именно работает геймификация?
+            </span>
+            <span class="faq-icon">
+              <i class="fas fa-chevron-down"></i>
+            </span>
           </button>
-
-          <div class="form__note">
-            <i class="fas fa-shield-alt"></i>
-            <span>Ваши данные защищены. Мы не спамим.</span>
+          <div class="faq-answer" aria-hidden="true">
+            <div class="faq-answer-content">
+              <p>Геймификация в Rise_Staff превращает рутинную работу в увлекательный процесс:</p>
+              <ul>
+                <li><strong>Уровни:</strong> от новичка до эксперта (всего 7 уровней)</li>
+                <li><strong>Квесты:</strong> еженедельные задания с наградами</li>
+                <li><strong>Доска лидеров:</strong> здоровая конкуренция в команде</li>
+                <li><strong>Бейджи:</strong> за особые достижения (лучший сейлз, эксперт месяца)</li>
+                <li><strong>Микро-победы:</strong> дофамин каждую неделю, а не раз в год</li>
+              </ul>
+              <p>Система автоматически трекает успехи и мотивирует сотрудников расти.</p>
+            </div>
           </div>
-        </form>
+        </div>
 
-        <div class="contact__alt">
-          <p class="contact__alt-text">Или напишите прямо сейчас:</p>
-          <div class="contact__alt-links">
-            <a
-              href="tel:+77765086000"
-              class="contact__alt-link contact__alt-link--phone"
-            >
-              <i class="fas fa-phone"></i>
-              Позвонить
-            </a>
+        <!-- Вопрос 2: Сколько стоит -->
+        <div class="faq-item">
+          <button class="faq-question" type="button" aria-expanded="false">
+            <span class="faq-question-text">
+              <i class="fas fa-ruble-sign"></i>
+              Сколько стоит платформа?
+            </span>
+            <span class="faq-icon">
+              <i class="fas fa-chevron-down"></i>
+            </span>
+          </button>
+          <div class="faq-answer" aria-hidden="true">
+            <div class="faq-answer-content">
+              <p>У нас гибкая система тарифов под любой бизнес:</p>
+              <ul>
+                <li><strong>Старт:</strong> до 10 сотрудников — 9 900₽/мес</li>
+                <li><strong>Бизнес:</strong> до 50 сотрудников — 24 900₽/мес</li>
+                <li><strong>Корпоративный:</strong> от 50+ сотрудников — индивидуально</li>
+                <li><strong>Первая неделя:</strong> бесплатный тест-драйв</li>
+              </ul>
+              <p>Все тарифы включают полный доступ к функциям геймификации и базе знаний.</p>
+              <p class="faq-note">💡 При оплате за год — скидка 20%</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Вопрос 3: Интеграции -->
+        <div class="faq-item">
+          <button class="faq-question" type="button" aria-expanded="false">
+            <span class="faq-question-text">
+              <i class="fas fa-plug"></i>
+              С какими CRM интегрируется?
+            </span>
+            <span class="faq-icon">
+              <i class="fas fa-chevron-down"></i>
+            </span>
+          </button>
+          <div class="faq-answer" aria-hidden="true">
+            <div class="faq-answer-content">
+              <p>На данный момент доступны:</p>
+              <ul>
+                <li><strong> amoCRM</strong> — полная интеграция (синхронизация сделок, контактов)</li>
+                <li><strong>🔄 Bitrix24</strong> — в разработке (релиз через 2 недели)</li>
+                <li><strong>📊 Google Таблицы</strong> — экспорт отчетов</li>
+                <li><strong>📅 Календарь</strong> — синхронизация задач</li>
+              </ul>
+              <p>Также есть API для интеграции с любыми внешними сервисами.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Вопрос 4: Как быстро внедрить -->
+        <div class="faq-item">
+          <button class="faq-question" type="button" aria-expanded="false">
+            <span class="faq-question-text">
+              <i class="fas fa-rocket"></i>
+              Как быстро можно внедрить систему?
+            </span>
+            <span class="faq-icon">
+              <i class="fas fa-chevron-down"></i>
+            </span>
+          </button>
+          <div class="faq-answer" aria-hidden="true">
+            <div class="faq-answer-content">
+              <p>Внедрение занимает от 1 до 5 дней:</p>
+              <ul>
+                <li><strong>День 1:</strong> регистрация и первичная настройка (30 минут)</li>
+                <li><strong>День 2:</strong> загрузка базы знаний, чек-листов, видеоуроков</li>
+                <li><strong>День 3:</strong> настройка уровней и челленджей под ваши KPI</li>
+                <li><strong>День 4:</strong> подключение сотрудников и обучение</li>
+                <li><strong>День 5:</strong> финальная настройка и запуск</li>
+              </ul>
+              <p>Мы сопровождаем на всех этапах внедрения бесплатно.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Вопрос 5: Безопасность данных -->
+        <div class="faq-item">
+          <button class="faq-question" type="button" aria-expanded="false">
+            <span class="faq-question-text">
+              <i class="fas fa-shield-alt"></i>
+              Как защищены данные компании?
+            </span>
+            <span class="faq-icon">
+              <i class="fas fa-chevron-down"></i>
+            </span>
+          </button>
+          <div class="faq-answer" aria-hidden="true">
+            <div class="faq-answer-content">
+              <p>Безопасность — наш приоритет:</p>
+              <ul>
+                <li><strong>Шифрование:</strong> все данные передаются по HTTPS (SSL 256-bit)</li>
+                <li><strong>Хранение:</strong> серверы в России (ФЗ-152 о персональных данных)</li>
+                <li><strong>Доступ:</strong> ролевая модель (админ, руководитель, сотрудник)</li>
+                <li><strong>Резервное копирование:</strong> ежедневные бэкапы</li>
+                <li><strong>Аудит:</strong> логи всех действий в системе</li>
+              </ul>
+              <p>Подписываем NDA (соглашение о неразглашении).</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Вопрос 6: Обучение сотрудников -->
+        <div class="faq-item">
+          <button class="faq-question" type="button" aria-expanded="false">
+            <span class="faq-question-text">
+              <i class="fas fa-chalkboard-teacher"></i>
+              Нужно ли обучать сотрудников?
+            </span>
+            <span class="faq-icon">
+              <i class="fas fa-chevron-down"></i>
+            </span>
+          </button>
+          <div class="faq-answer" aria-hidden="true">
+            <div class="faq-answer-content">
+              <p>Интерфейс интуитивно понятен, но мы предоставляем:</p>
+              <ul>
+                <li><strong>Видеоуроки:</strong> 15 минутный курс для новых сотрудников</li>
+                <li><strong>Базу знаний:</strong> инструкции и ответы на частые вопросы</li>
+                <li><strong>Вебинар:</strong> онлайн-обучение для руководителей (1 час)</li>
+                <li><strong>Чат поддержки:</strong> отвечаем на вопросы в рабочее время</li>
+              </ul>
+              <p>95% сотрудников осваивают систему за первый день работы.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Вопрос 7: Подходит ли для агентств недвижимости? -->
+        <div class="faq-item">
+          <button class="faq-question" type="button" aria-expanded="false">
+            <span class="faq-question-text">
+              <i class="fas fa-building"></i>
+              Подходит ли для агентств недвижимости?
+            </span>
+            <span class="faq-icon">
+              <i class="fas fa-chevron-down"></i>
+            </span>
+          </button>
+          <div class="faq-answer" aria-hidden="true">
+            <div class="faq-answer-content">
+              <p>Да! Мы специально адаптировали платформу под риэлторов:</p>
+              <ul>
+                <li><strong>Квесты:</strong> "провести 10 показов", "закрыть 3 сделки"</li>
+                <li><strong>База знаний:</strong> скрипты звонков, шаблоны договоров</li>
+                <li><strong>Уровни:</strong> от стажера до ведущего агента</li>
+                <li><strong>Интеграция:</strong> с CRM для недвижимости</li>
+              </ul>
+              <p>Уже 47 агентств недвижимости используют Rise_Staff и увеличили продажи в среднем на 30%.</p>
+            </div>
           </div>
         </div>
       </div>
+
+      <!-- Дополнительный блок с контактами -->
+      <div class="faq-footer">
+        <p>Остались вопросы? Свяжитесь с нами!</p>
+        <div class="faq-contact">
+          <a href="https://wa.me/77765086000" class="faq-contact-link" target="_blank">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+          </a>
+          <a href="https://t.me/+77765086000" class="faq-contact-link" target="_blank">
+            <i class="fab fa-telegram"></i> Telegram
+          </a>
+          <a href="tel:+77765086000" class="faq-contact-link">
+            <i class="fas fa-phone"></i> Позвонить
+          </a>
+        </div>
+      </div>
     </div>
+  </div>
+</section>
+
+   <section>
+  <div class="container">
+   <div class="contact">
+  <div class="contact">
+  <div class="contact__form">
+    <!-- Основная форма -->
+  <form class="form" id="demo-form" method="POST">
+  <div class="form__header">
+    <h3 class="form__title">Забронировать демо</h3>
+    <p class="form__subtitle">Заполните форму — мы свяжемся в течение часа</p>
+  </div>
+
+  <!-- Скрытые поля -->
+  <input type="hidden" name="_subject" value="🔔 Новая заявка на демо с сайта Rise Staff">
+  <input type="hidden" name="_template" value="table">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_autoresponse" value="Спасибо за заявку! Мы свяжемся с вами в течение часа.">
+  <input type="hidden" name="_token" value="4154a2bbfc843db5b94a9ff017365cc4">
+  <!-- Для теста пока не активировали -->
+  <input type="hidden" name="_test" value="1">
+
+  <div class="form__group">
+    <input type="text" class="form__input" name="name" placeholder="Ваше имя" required />
+  </div>
+
+  <div class="form__group">
+    <input type="tel" class="form__input" name="phone" placeholder="Телефон" required />
+  </div>
+
+  <div class="form__group">
+    <input type="email" class="form__input" name="email" placeholder="Email (необязательно)" />
+  </div>
+
+  <!-- ЧЕКБОКС СОГЛАСИЯ -->
+  <div class="form__group form__group--consent">
+    <label class="consent-label">
+      <input type="checkbox" name="consent" id="formConsent" required class="consent-checkbox">
+      <span class="consent-checkmark"></span>
+      <span class="consent-text">
+        Я соглашаюсь на
+        <a href="#" id="showPrivacyPolicyForm" class="consent-link">
+          обработку персональных данных
+        </a>
+        и получение информационных рассылок
+      </span>
+    </label>
+  </div>
+
+  <div class="form__btn">
+    <button type="submit" class="btn btn--primary btn--block" id="formSubmitBtn" disabled>
+      <i class="fas fa-paper-plane"></i>
+      Отправить заявку
+    </button>
+  </div>
+</form>
+
+    <!-- СОЦИАЛЬНЫЕ КНОПКИ -->
+    <div class="social-buttons">
+      <a href="https://wa.me/77765086000?text=Здравствуйте!%20Хочу%20узнать%20подробнее%20о%20Rise%20Staff"
+         class="btn btn--whatsapp btn--block"
+         target="_blank"
+         rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+        WhatsApp
+      </a>
+
+      <a href="https://t.me/+77765086000"
+         class="btn btn--telegram btn--block"
+         target="_blank"
+         rel="noopener noreferrer">
+        <i class="fab fa-telegram-plane"></i>
+        Telegram
+      </a>
+    </div>
+
+    <div class="contact__alt">
+      <p class="contact__alt-text">Или позвоните прямо сейчас:</p>
+      <div class="contact__alt-links">
+        <a href="tel:+77765086000" class="contact__alt-link contact__alt-link--phone">
+          <i class="fas fa-phone"></i>
+          +7 (776) 508-60-00
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
   </div>
 </section>
 
@@ -922,97 +1134,78 @@
       </div>
     </footer>
 
-    <!-- МОДАЛЬНОЕ ОКНО ДЕМО-ВЕРСИИ (ВЫЕЗЖАЕТ СБОКУ) -->
-    <div class="side-modal-overlay" id="sideModalOverlay">
-      <div class="side-modal" id="sideModal">
-        <div class="side-modal-header">
-          <h3 class="side-modal-title">Закажите демо-версию</h3>
-          <button class="side-modal-close" id="closeSideModalBtn">
-            &times;
-          </button>
-        </div>
 
-        <div class="side-modal-body">
-          <p class="side-modal-subtitle">
-            Заполните форму и наш специалист свяжется с вами в течение 2 часов
-          </p>
-
-          <form id="sideModalForm" class="side-modal-form">
-            <div class="form-group">
-              <input
-                type="text"
-                id="sideName"
-                name="name"
-                placeholder="Ваше имя"
-                required
-              />
-            </div>
-
-            <div class="form-group">
-              <input
-                type="tel"
-                id="sidePhone"
-                name="phone"
-                placeholder="Телефон"
-                required
-              />
-            </div>
-
-            <div class="form-group">
-              <input
-                type="email"
-                id="sideEmail"
-                name="email"
-                placeholder="Email"
-                required
-              />
-            </div>
-
-
-
-
-<div class="form__group form__group--consent">
-            <label class="consent-label">
-              <input
-                type="checkbox"
-                name="consent"
-                id="formConsent"
-                required
-                class="consent-checkbox"
-              >
-              <span class="consent-checkmark"></span>
-              <span class="consent-text">
-                Я соглашаюсь на
-                <a href="#" id="showPrivacyPolicyForm" class="consent-link">
-                  обработку персональных данных
-                </a>
-                и получение информационных рассылок
-              </span>
-            </label>
-          </div>
-            <button type="submit" class="btn btn-primary btn-block">
-              Отправить заявку
-            </button>
-          </form>
-
-          <div
-            class="side-modal-success"
-            id="sideModalSuccess"
-            style="display: none"
-          >
-            <div class="success-icon">
-              <i class="fas fa-check-circle"></i>
-            </div>
-            <h4>Спасибо за заявку!</h4>
-            <p>Мы свяжемся с вами в ближайшее время</p>
-            <button class="btn btn-primary" id="closeSideSuccessBtn">
-              Закрыть
-            </button>
-          </div>
-        </div>
-      </div>
+<!-- МОДАЛЬНОЕ ОКНО ДЕМО-ВЕРСИИ -->
+<div class="side-modal-overlay" id="sideModalOverlay">
+  <div class="side-modal" id="sideModal">
+    <div class="side-modal-header">
+      <h3 class="side-modal-title">Закажите демо-версию</h3>
+      <button class="side-modal-close" id="closeSideModalBtn">
+        <i class="fas fa-times"></i>
+      </button>
     </div>
 
+    <div class="side-modal-body">
+      <p class="side-modal-subtitle">
+        Заполните форму и наш специалист свяжется с вами в течение 2 часов
+      </p>
+
+    <form id="sideModalForm" class="side-modal-form" method="POST">
+  <input type="hidden" name="_subject" value="🔔 Новая заявка из модального окна Rise Staff">
+  <input type="hidden" name="_template" value="table">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_autoresponse" value="Спасибо за заявку! Мы свяжемся с вами в течение 2 часов.">
+  <input type="hidden" name="_token" value="4154a2bbfc843db5b94a9ff017365cc4">
+  <input type="hidden" name="_test" value="1">
+
+  <div class="form-group">
+    <input type="text" id="sideName" name="name" placeholder="Ваше имя" required />
+  </div>
+
+  <div class="form-group">
+    <input type="tel" id="sidePhone" name="phone" placeholder="Телефон" required />
+  </div>
+
+  <div class="form-group">
+    <input type="email" id="sideEmail" name="email" placeholder="Email" required />
+  </div>
+
+  <div class="form-group form__group--consent">
+    <label class="consent-label">
+      <input type="checkbox" name="consent" id="modalConsent" required class="consent-checkbox">
+      <span class="consent-checkmark"></span>
+      <span class="consent-text">
+        Я соглашаюсь на
+        <a href="#" id="showPrivacyPolicyModal" class="consent-link">
+          обработку персональных данных
+        </a>
+      </span>
+    </label>
+  </div>
+
+  <div class="form-actions">
+    <button type="submit" class="btn btn-primary" id="modalSubmitBtn" disabled>
+      Отправить заявку
+    </button>
+    <button type="button" class="btn btn-secondary" id="closeModalFormBtn">
+      <i class="fas fa-times"></i> Закрыть
+    </button>
+  </div>
+</form>
+
+      <div class="side-modal-success" id="sideModalSuccess" style="display: none">
+        <div class="success-icon">
+          <i class="fas fa-check-circle"></i>
+        </div>
+        <h4>Спасибо за заявку!</h4>
+        <p>Мы свяжемся с вами в ближайшее время</p>
+        <button class="btn btn-primary" id="closeSideSuccessBtn">
+          Закрыть
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
     <!-- МИНИ-ВЕРСИЯ МОДАЛЬНОГО ОКНА -->
     <div class="side-modal-mini" id="sideModalMini">
       <div class="side-modal-mini-icon">
@@ -1108,6 +1301,9 @@
 
     <script src="js/soluction.js"></script>
     <script src="js/modal.js"></script>
+    <script src="js/telegram_bot.js"></script>
+    <script src="js/accardion.js"></script>
     <script src="js/main.js"></script>
+
   </body>
 </html>
