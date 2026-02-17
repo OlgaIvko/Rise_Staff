@@ -5,28 +5,29 @@ class SideDemoModal {
     this.overlay = document.getElementById("sideModalOverlay");
     this.modal = document.getElementById("sideModal");
     this.closeBtn = document.getElementById("closeSideModalBtn");
-    this.closeModalFormBtn = document.getElementById("closeModalFormBtn"); // НОВАЯ КНОПКА
+    this.closeModalFormBtn = document.getElementById("closeModalFormBtn");
     this.form = document.getElementById("sideModalForm");
     this.success = document.getElementById("sideModalSuccess");
     this.closeSuccessBtn = document.getElementById("closeSideSuccessBtn");
     this.miniModal = document.getElementById("sideModalMini");
     this.miniCloseBtn = document.getElementById("closeMiniBtn");
+    this.consent = document.getElementById("modalConsent");
+    this.submitBtn = document.getElementById("modalSubmitBtn");
 
     // Таймер для мини-модалки
     this.miniTimer = null;
 
     // Проверка наличия элементов
     if (!this.overlay) {
-      console.error("Элементы модального окна не найдены!");
+      console.error("❌ Элементы модального окна не найдены!");
       return;
     }
 
+    console.log("✅ SideDemoModal инициализирован");
     this.init();
   }
 
   init() {
-    console.log("Инициализация SideDemoModal");
-
     // Закрытие по крестику в хедере
     if (this.closeBtn) {
       this.closeBtn.addEventListener("click", (e) => {
@@ -35,9 +36,10 @@ class SideDemoModal {
       });
     }
 
-    // НОВОЕ: Закрытие по кнопке в форме
+    // Закрытие по кнопке в форме
     if (this.closeModalFormBtn) {
-      this.closeModalFormBtn.addEventListener("click", () => {
+      this.closeModalFormBtn.addEventListener("click", (e) => {
+        e.preventDefault();
         this.close();
       });
     }
@@ -56,11 +58,26 @@ class SideDemoModal {
       }
     });
 
-    // Обработка формы
+    // Обработка чекбокса
+    if (this.consent && this.submitBtn) {
+      // Начальное состояние
+      this.submitBtn.disabled = true;
+      this.submitBtn.style.opacity = "0.6";
+
+      this.consent.addEventListener("change", () => {
+        this.submitBtn.disabled = !this.consent.checked;
+        this.submitBtn.style.opacity = this.consent.checked ? "1" : "0.6";
+        this.submitBtn.style.cursor = this.consent.checked
+          ? "pointer"
+          : "not-allowed";
+      });
+    }
+
+    // ===== ИСПРАВЛЕНО: НЕ БЛОКИРУЕМ ОТПРАВКУ =====
     if (this.form) {
       this.form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        this.handleSubmit();
+        console.log("📤 Отправка формы (класс SideDemoModal)");
+        // НЕ вызываем preventDefault - пусть работает простой обработчик
       });
     }
 
@@ -85,23 +102,33 @@ class SideDemoModal {
         e.stopPropagation();
         this.hideMini();
         sessionStorage.setItem("miniModalClosed", "true");
-        this.scheduleNextMini(60000); // Следующий показ через 1 минуту
+        this.scheduleNextMini(60000);
       });
     }
 
     // Запускаем автоматические попапы
     this.setupAutoPopup();
   }
-
   isOpen() {
     return this.overlay.classList.contains("active");
   }
 
   open() {
     this.overlay.classList.add("active");
-    console.log("Модальное окно открыто");
+    document.body.style.overflow = "hidden";
+    console.log("✅ Модальное окно открыто");
 
-    // Скрываем мини-версию когда открыто полное окно
+    // Сбрасываем состояние формы
+    if (this.form) this.form.reset();
+    if (this.consent) this.consent.checked = false;
+    if (this.submitBtn) {
+      this.submitBtn.disabled = true;
+      this.submitBtn.style.opacity = "0.6";
+    }
+    if (this.success) this.success.style.display = "none";
+    if (this.form) this.form.style.display = "block";
+
+    // Скрываем мини-версию
     this.hideMini();
 
     // Отменяем запланированный показ мини
@@ -113,41 +140,28 @@ class SideDemoModal {
 
   close() {
     this.overlay.classList.remove("active");
-    console.log("Модальное окно закрыто");
-
-    // Сбрасываем форму
-    if (this.form) {
-      this.form.reset();
-      this.form.style.display = "block";
-    }
-    if (this.success) {
-      this.success.style.display = "none";
-    }
+    document.body.style.overflow = "";
+    console.log("✅ Модальное окно закрыто");
 
     // Планируем следующее появление мини-модалки
-    this.scheduleNextMini(30000); // Через 30 секунд
+    this.scheduleNextMini(30000);
   }
 
   scheduleNextMini(delay = 30000) {
-    // Очищаем предыдущий таймер если был
     if (this.miniTimer) {
       clearTimeout(this.miniTimer);
     }
 
     const demoRequested = localStorage.getItem("demoRequested");
 
-    // Не показываем если уже была заявка
     if (demoRequested) {
-      console.log("Заявка уже была, мини-модалка не появится");
+      console.log("⏭️ Заявка уже была, мини-модалка не появится");
       return;
     }
 
-    // Планируем показ мини-модалки
     this.miniTimer = setTimeout(() => {
-      // Проверяем что полная модалка не открыта
       if (!this.isOpen() && !sessionStorage.getItem("miniModalClosed")) {
         this.showMini();
-        console.log(`Мини-модалка появилась через ${delay / 1000} секунд`);
       }
     }, delay);
   }
@@ -159,12 +173,11 @@ class SideDemoModal {
       !this.isOpen()
     ) {
       this.miniModal.classList.add("show");
-      console.log("Мини-модалка показана");
+      console.log("✅ Мини-модалка показана");
 
-      // Автоматически скрываем через 15 секунд
       setTimeout(() => {
         this.hideMini();
-        this.scheduleNextMini(60000); // Следующий показ через минуту
+        this.scheduleNextMini(60000);
       }, 15000);
     }
   }
@@ -175,47 +188,17 @@ class SideDemoModal {
     }
   }
 
-  handleSubmit() {
-    // Собираем данные формы
-    const formData = {
-      name: document.getElementById("sideName")?.value || "",
-      phone: document.getElementById("sidePhone")?.value || "",
-      email: document.getElementById("sideEmail")?.value || "",
-      company: document.getElementById("sideCompany")?.value || "",
-    };
-
-    console.log("Отправка формы:", formData);
-
-    // Показываем сообщение об успехе
-    if (this.form && this.success) {
-      this.form.style.display = "none";
-      this.success.style.display = "block";
-    }
-
-    // Сохраняем в localStorage
-    localStorage.setItem("demoRequested", "true");
-    localStorage.setItem("demoRequestTime", new Date().toISOString());
-
-    // Автоматически закрываем через 3 секунды
-    setTimeout(() => {
-      this.close();
-    }, 3000);
-  }
-
   setupAutoPopup() {
     const demoRequested = localStorage.getItem("demoRequested");
 
-    // Не показываем если уже была заявка
     if (demoRequested) return;
 
-    // Показываем мини-версию через 10 секунд
     setTimeout(() => {
       if (!sessionStorage.getItem("miniModalClosed")) {
         this.showMini();
       }
     }, 10000);
 
-    // Показываем полную версию через 45 секунд
     setTimeout(() => {
       if (!sessionStorage.getItem("sidePopupShown") && !demoRequested) {
         this.open();
@@ -223,7 +206,6 @@ class SideDemoModal {
       }
     }, 45000);
 
-    // При прокрутке 60%
     window.addEventListener("scroll", () => {
       if (sessionStorage.getItem("sideScrollPopup") || demoRequested) return;
 
@@ -238,7 +220,6 @@ class SideDemoModal {
       }
     });
 
-    // При попытке уйти со страницы
     document.addEventListener("mouseleave", (e) => {
       if (sessionStorage.getItem("sideExitPopup") || demoRequested) return;
 
@@ -250,6 +231,7 @@ class SideDemoModal {
   }
 }
 
+// ===== МОДАЛЬНОЕ ОКНО ПОЛИТИКИ КОНФИДЕНЦИАЛЬНОСТИ =====
 // ===== МОДАЛЬНОЕ ОКНО ПОЛИТИКИ КОНФИДЕНЦИАЛЬНОСТИ =====
 class PrivacyModal {
   constructor() {
@@ -289,7 +271,6 @@ class PrivacyModal {
     if (this.agreeBtn) {
       this.agreeBtn.addEventListener("click", () => {
         this.close();
-        // Здесь можно добавить логику для согласия
         localStorage.setItem("privacyAgreed", "true");
       });
     }
@@ -302,17 +283,6 @@ class PrivacyModal {
         this.open();
       });
     }
-    // В методе init() добавьте обработку закрытия мини-модалки
-    if (this.miniCloseBtn) {
-      this.miniCloseBtn.addEventListener("click", (e) => {
-        e.stopPropagation();
-        this.hideMini();
-        sessionStorage.setItem("miniModalClosed", "true");
-
-        // Планируем следующее появление через 2 минуты
-        this.scheduleNextMini(60000); // 1 минуты
-      });
-    }
   }
 
   isOpen() {
@@ -321,17 +291,28 @@ class PrivacyModal {
 
   open() {
     this.overlay.classList.add("active");
-    document.body.style.overflow = "hidden"; // Блокируем прокрутку
+    document.body.style.overflow = "hidden";
     console.log("Privacy modal opened");
   }
 
   close() {
     this.overlay.classList.remove("active");
-    document.body.style.overflow = ""; // Возвращаем прокрутку
+    document.body.style.overflow = "";
     console.log("Privacy modal closed");
   }
 }
+// Тестовые функции - добавьте в конец файла
+window.testModalClose = function () {
+  const modal = document.getElementById("sideModalOverlay");
+  if (modal) modal.classList.remove("active");
+  console.log("🔧 Тест: модалка закрыта");
+};
 
+window.testModalOpen = function () {
+  const modal = document.getElementById("sideModalOverlay");
+  if (modal) modal.classList.add("active");
+  console.log("🔧 Тест: модалка открыта");
+};
 // ===== COOKIE СОГЛАСИЕ =====
 class CookieConsent {
   constructor() {
@@ -411,4 +392,147 @@ if (document.readyState === "loading") {
   window.sideDemoModal = new SideDemoModal();
 }
 
-// window.telegramBot = telegramBot;
+// ПРИНУДИТЕЛЬНАЯ АКТИВАЦИЯ - добавьте в конец файла
+setTimeout(() => {
+  console.log("🔄 Принудительная активация обработчиков");
+
+  // Находим кнопки закрытия
+  const closeBtn = document.getElementById("closeSideModalBtn");
+  const closeFormBtn = document.getElementById("closeModalFormBtn");
+  const overlay = document.getElementById("sideModalOverlay");
+
+  // Добавляем прямые обработчики (дублирующие, для надежности)
+  if (closeBtn) {
+    closeBtn.onclick = function () {
+      if (overlay) overlay.classList.remove("active");
+      document.body.style.overflow = "";
+      console.log("🔧 Прямое закрытие по крестику");
+    };
+  }
+
+  if (closeFormBtn) {
+    closeFormBtn.onclick = function () {
+      if (overlay) overlay.classList.remove("active");
+      document.body.style.overflow = "";
+      console.log("🔧 Прямое закрытие по кнопке в форме");
+    };
+  }
+
+  console.log("✅ Принудительная активация завершена");
+}, 1000);
+
+// ===== САМЫЙ ПРОСТОЙ ОБРАБОТЧИК =====
+document.addEventListener("DOMContentLoaded", function () {
+  console.log("🔄 Запуск простого обработчика");
+
+  const form = document.getElementById("sideModalForm");
+
+  if (!form) {
+    console.error("❌ Форма не найдена");
+    return;
+  }
+
+  console.log("✅ Форма найдена");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    console.log("📤 Отправка формы");
+
+    const consent = document.getElementById("modalConsent");
+
+    if (!consent || !consent.checked) {
+      alert("Нужно согласиться");
+      return;
+    }
+
+    // Показываем сообщение об отправке
+    alert("Отправка...");
+
+    // Отправляем форму стандартным способом
+    this.submit();
+  });
+});
+// ===== УПРАВЛЕНИЕ МОДАЛКОЙ =====
+document.addEventListener("DOMContentLoaded", function () {
+  const overlay = document.getElementById("sideModalOverlay");
+  const closeBtn = document.getElementById("closeSideModalBtn");
+  const closeFormBtn = document.getElementById("closeModalFormBtn");
+  const closeSuccessBtn = document.getElementById("closeSideSuccessBtn");
+
+  // Функция открытия
+  window.openModal = function () {
+    overlay.classList.add("active");
+    document.body.style.overflow = "hidden";
+  };
+
+  // Функция закрытия
+  window.closeModal = function () {
+    overlay.classList.remove("active");
+    document.body.style.overflow = "";
+
+    // Сбрасываем форму
+    const form = document.getElementById("sideModalForm");
+    const success = document.getElementById("sideModalSuccess");
+    if (form) form.style.display = "block";
+    if (success) success.style.display = "none";
+  };
+
+  // Закрытие по крестику
+  if (closeBtn) closeBtn.addEventListener("click", closeModal);
+  if (closeFormBtn) closeFormBtn.addEventListener("click", closeModal);
+  if (closeSuccessBtn) closeSuccessBtn.addEventListener("click", closeModal);
+
+  // Закрытие по клику на фон
+  overlay.addEventListener("click", function (e) {
+    if (e.target === overlay) closeModal();
+  });
+
+  // Открытие по кнопкам
+  document.querySelectorAll('[href="#demo"], .btn--primary').forEach((btn) => {
+    btn.addEventListener("click", function (e) {
+      e.preventDefault();
+      openModal();
+    });
+  });
+
+  // Обработка отправки формы
+  const form = document.getElementById("sideModalForm");
+  const success = document.getElementById("sideModalSuccess");
+
+  if (form) {
+    form.addEventListener("submit", function () {
+      setTimeout(() => {
+        form.style.display = "none";
+        success.style.display = "block";
+      }, 100);
+    });
+  }
+
+  // Мини-модалка
+  const miniModal = document.getElementById("sideModalMini");
+  const miniClose = document.getElementById("closeMiniBtn");
+
+  if (miniModal) {
+    miniModal.addEventListener("click", function (e) {
+      if (!e.target.closest(".side-modal-mini-close")) {
+        openModal();
+        miniModal.classList.remove("show");
+      }
+    });
+  }
+
+  if (miniClose) {
+    miniClose.addEventListener("click", function (e) {
+      e.stopPropagation();
+      miniModal.classList.remove("show");
+    });
+  }
+
+  // Показ мини-модалки через 10 сек
+  setTimeout(() => {
+    if (miniModal && !localStorage.getItem("demoRequested")) {
+      miniModal.classList.add("show");
+    }
+  }, 10000);
+});

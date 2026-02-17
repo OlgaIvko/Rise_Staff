@@ -843,9 +843,9 @@
               <p>На данный момент доступны:</p>
               <ul>
                 <li><strong> amoCRM</strong> — полная интеграция (синхронизация сделок, контактов)</li>
-                <li><strong>🔄 Bitrix24</strong> — в разработке (релиз через 2 недели)</li>
-                <li><strong>📊 Google Таблицы</strong> — экспорт отчетов</li>
-                <li><strong>📅 Календарь</strong> — синхронизация задач</li>
+                <li><strong> Bitrix24</strong> — в разработке (релиз через 2 недели)</li>
+                <li><strong> Google Таблицы</strong> — экспорт отчетов</li>
+                <li><strong> Календарь</strong> — синхронизация задач</li>
               </ul>
               <p>Также есть API для интеграции с любыми внешними сервисами.</p>
             </div>
@@ -981,7 +981,7 @@
   <div class="contact__form">
     <!-- Основная форма -->
   <form class="form" id="demo-form" method="POST">
-  <div class="form__header">
+ <div class="form__header">
     <h3 class="form__title">Забронировать демо</h3>
     <p class="form__subtitle">Заполните форму — мы свяжемся в течение часа</p>
   </div>
@@ -992,8 +992,6 @@
   <input type="hidden" name="_captcha" value="false">
   <input type="hidden" name="_autoresponse" value="Спасибо за заявку! Мы свяжемся с вами в течение часа.">
   <input type="hidden" name="_token" value="4154a2bbfc843db5b94a9ff017365cc4">
-  <!-- Для теста пока не активировали -->
-  <input type="hidden" name="_test" value="1">
 
   <div class="form__group">
     <input type="text" class="form__input" name="name" placeholder="Ваше имя" required />
@@ -1150,47 +1148,47 @@
         Заполните форму и наш специалист свяжется с вами в течение 2 часов
       </p>
 
-    <form id="sideModalForm" class="side-modal-form" method="POST">
-  <input type="hidden" name="_subject" value="🔔 Новая заявка из модального окна Rise Staff">
-  <input type="hidden" name="_template" value="table">
-  <input type="hidden" name="_captcha" value="false">
-  <input type="hidden" name="_autoresponse" value="Спасибо за заявку! Мы свяжемся с вами в течение 2 часов.">
+ <form id="sideModalForm" method="POST" action="https://formsubmit.co/Rtarzhakayev@gmail.com">
+  <!-- Обязательные скрытые поля -->
   <input type="hidden" name="_token" value="4154a2bbfc843db5b94a9ff017365cc4">
-  <input type="hidden" name="_test" value="1">
+  <input   type="hidden" name="_subject" value="Заявка с сайта">
 
   <div class="form-group">
-    <input type="text" id="sideName" name="name" placeholder="Ваше имя" required />
-  </div>
-
-  <div class="form-group">
-    <input type="tel" id="sidePhone" name="phone" placeholder="Телефон" required />
+    <input class="custom-input__field" type="text" name="name" placeholder="Имя" required>
   </div>
 
   <div class="form-group">
-    <input type="email" id="sideEmail" name="email" placeholder="Email" required />
+
+    <input class="custom-input__field" type="tel" name="phone" placeholder="Телефон" required>
   </div>
 
-  <div class="form-group form__group--consent">
-    <label class="consent-label">
-      <input type="checkbox" name="consent" id="modalConsent" required class="consent-checkbox">
-      <span class="consent-checkmark"></span>
-      <span class="consent-text">
-        Я соглашаюсь на
-        <a href="#" id="showPrivacyPolicyModal" class="consent-link">
-          обработку персональных данных
-        </a>
-      </span>
-    </label>
-  </div>
+  <!-- Чекбокс согласия в старом стиле -->
+        <div class="form-group form__group--consent">
+          <label class="consent-label">
+            <input
+              type="checkbox"
+              name="consent"
+              id="modalConsent"
+              required
+              class="consent-checkbox"
+            >
+            <span class="consent-checkmark"></span>
+            <span class="consent-text">
+              Я соглашаюсь на
+              <a href="#" id="showPrivacyPolicyModal" class="consent-link">
+                обработку персональных данных
+              </a>
+            </span>
+          </label>
+        </div>
+<div class="side-modal-actions">
 
-  <div class="form-actions">
-    <button type="submit" class="btn btn-primary" id="modalSubmitBtn" disabled>
-      Отправить заявку
-    </button>
-    <button type="button" class="btn btn-secondary" id="closeModalFormBtn">
+  <button class="btn form__btn" type="submit" id="modalSubmitBtn">Отправить</button>
+
+ <button type="button" class="btn btn-secondary" id="closeModalFormBtn">
       <i class="fas fa-times"></i> Закрыть
     </button>
-  </div>
+    </div>
 </form>
 
       <div class="side-modal-success" id="sideModalSuccess" style="display: none">

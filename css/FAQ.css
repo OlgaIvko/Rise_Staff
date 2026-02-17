@@ -1,4 +1,4 @@
-/* ===== FAQ SECTION ===== */
+/* ===== FAQ SECTION С ИКОНКАМИ ===== */
 .faq-section {
   padding: 100px 0;
   background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
@@ -191,7 +191,7 @@
 }
 
 .faq-answer-content {
-  padding: 0 30px 25px 75px; /* 75px = 30px (иконка) + 30px (gap) + 15px */
+  padding: 0 30px 25px 75px;
   color: var(--gray);
   line-height: 1.7;
 }
@@ -202,28 +202,210 @@
 
 .faq-answer-content ul {
   margin: 15px 0;
-  padding-left: 20px;
+  padding-left: 0;
   list-style: none;
 }
 
 .faq-answer-content li {
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   position: relative;
-  padding-left: 25px;
+  padding-left: 35px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-.faq-answer-content li::before {
-  content: "✅";
+/* Иконки для каждого типа пунктов */
+.faq-answer-content li:nth-child(1)::before {
+  content: "🎯";
   position: absolute;
   left: 0;
   top: 0;
-  color: var(--secondary);
-  font-size: 0.9rem;
+  font-size: 1.2rem;
 }
 
-.faq-answer-content strong {
+.faq-answer-content li:nth-child(2)::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1.2rem;
+}
+
+.faq-answer-content li:nth-child(3)::before {
+  content: "🏆";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1.2rem;
+}
+
+.faq-answer-content li:nth-child(4)::before {
+  content: "💎";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1.2rem;
+}
+
+.faq-answer-content li:nth-child(5)::before {
+  content: "📈";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1.2rem;
+}
+
+.faq-answer-content li:nth-child(6)::before {
+  content: "🔒";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1.2rem;
+}
+
+.faq-answer-content li:nth-child(7)::before {
+  content: "🚀";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1.2rem;
+}
+
+.faq-answer-content li:nth-child(8)::before {
+  content: "💡";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1.2rem;
+}
+
+.faq-answer-content li strong {
   color: var(--primary);
   font-weight: 600;
+  margin-right: 5px;
+}
+
+/* Специальные иконки для разных списков */
+.faq-item:nth-child(1) .faq-answer-content li::before {
+  content: "🎮";
+}
+.faq-item:nth-child(1) .faq-answer-content li:nth-child(1)::before {
+  content: "📊";
+}
+.faq-item:nth-child(1) .faq-answer-content li:nth-child(2)::before {
+  content: "🎯";
+}
+.faq-item:nth-child(1) .faq-answer-content li:nth-child(3)::before {
+  content: "🏆";
+}
+.faq-item:nth-child(1) .faq-answer-content li:nth-child(4)::before {
+  content: "⭐";
+}
+.faq-item:nth-child(1) .faq-answer-content li:nth-child(5)::before {
+  content: "⚡";
+}
+
+.faq-item:nth-child(2) .faq-answer-content li::before {
+  content: "💰";
+}
+.faq-item:nth-child(2) .faq-answer-content li:nth-child(1)::before {
+  content: "🚀";
+}
+.faq-item:nth-child(2) .faq-answer-content li:nth-child(2)::before {
+  content: "💼";
+}
+.faq-item:nth-child(2) .faq-answer-content li:nth-child(3)::before {
+  content: "🏢";
+}
+.faq-item:nth-child(2) .faq-answer-content li:nth-child(4)::before {
+  content: "🎁";
+}
+
+.faq-item:nth-child(3) .faq-answer-content li::before {
+  content: "🔌";
+}
+.faq-item:nth-child(3) .faq-answer-content li:nth-child(1)::before {
+  content: "✅";
+}
+.faq-item:nth-child(3) .faq-answer-content li:nth-child(2)::before {
+  content: "🔄";
+}
+.faq-item:nth-child(3) .faq-answer-content li:nth-child(3)::before {
+  content: "📊";
+}
+.faq-item:nth-child(3) .faq-answer-content li:nth-child(4)::before {
+  content: "📅";
+}
+
+.faq-item:nth-child(4) .faq-answer-content li::before {
+  content: "⏱️";
+}
+.faq-item:nth-child(4) .faq-answer-content li:nth-child(1)::before {
+  content: "1️⃣";
+}
+.faq-item:nth-child(4) .faq-answer-content li:nth-child(2)::before {
+  content: "2️⃣";
+}
+.faq-item:nth-child(4) .faq-answer-content li:nth-child(3)::before {
+  content: "3️⃣";
+}
+.faq-item:nth-child(4) .faq-answer-content li:nth-child(4)::before {
+  content: "4️⃣";
+}
+.faq-item:nth-child(4) .faq-answer-content li:nth-child(5)::before {
+  content: "5️⃣";
+}
+
+.faq-item:nth-child(5) .faq-answer-content li::before {
+  content: "🛡️";
+}
+.faq-item:nth-child(5) .faq-answer-content li:nth-child(1)::before {
+  content: "🔐";
+}
+.faq-item:nth-child(5) .faq-answer-content li:nth-child(2)::before {
+  content: "🇷🇺";
+}
+.faq-item:nth-child(5) .faq-answer-content li:nth-child(3)::before {
+  content: "👥";
+}
+.faq-item:nth-child(5) .faq-answer-content li:nth-child(4)::before {
+  content: "💾";
+}
+.faq-item:nth-child(5) .faq-answer-content li:nth-child(5)::before {
+  content: "📋";
+}
+
+.faq-item:nth-child(6) .faq-answer-content li::before {
+  content: "📚";
+}
+.faq-item:nth-child(6) .faq-answer-content li:nth-child(1)::before {
+  content: "🎥";
+}
+.faq-item:nth-child(6) .faq-answer-content li:nth-child(2)::before {
+  content: "📖";
+}
+.faq-item:nth-child(6) .faq-answer-content li:nth-child(3)::before {
+  content: "👨‍🏫";
+}
+.faq-item:nth-child(6) .faq-answer-content li:nth-child(4)::before {
+  content: "💬";
+}
+
+.faq-item:nth-child(7) .faq-answer-content li::before {
+  content: "🏠";
+}
+.faq-item:nth-child(7) .faq-answer-content li:nth-child(1)::before {
+  content: "🔑";
+}
+.faq-item:nth-child(7) .faq-answer-content li:nth-child(2)::before {
+  content: "📝";
+}
+.faq-item:nth-child(7) .faq-answer-content li:nth-child(3)::before {
+  content: "📈";
+}
+.faq-item:nth-child(7) .faq-answer-content li:nth-child(4)::before {
+  content: "🔄";
 }
 
 .faq-note {
@@ -238,6 +420,14 @@
   border-left: 4px solid var(--secondary);
   font-weight: 500;
   color: var(--dark);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.faq-note::before {
+  content: "💡";
+  font-size: 1.3rem;
 }
 
 /* Футер FAQ */
@@ -280,7 +470,7 @@
 
 .faq-contact-link:hover {
   background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-  color: var(--dark);
+  color: white;
   transform: translateY(-3px);
   box-shadow: 0 10px 20px -5px rgba(42, 91, 219, 0.3);
 }
@@ -349,6 +539,6 @@
   }
 
   .faq-answer-content li {
-    padding-left: 20px;
+    padding-left: 30px;
   }
 }
