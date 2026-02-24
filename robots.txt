@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Запретить служебные страницы
+Disallow: /admin/
+Disallow: /tmp/
+Disallow: /temp/
+
+# Карта сайта
+Sitemap: https://risestaff.ru/sitemap.xml
+
+# Хост (для Яндекса)
+Host: https://risestaff.ru

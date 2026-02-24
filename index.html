@@ -3,6 +3,38 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Rise Staff — платформа для автоматизации найма, обучения и управления командой в риэлторском агентстве. Геймификация, уровни и челленджи увеличивают продажи на 30%.">
+    <meta name="keywords" content="автоматизация найма, обучение персонала, управление командой, риэлторское агентство, геймификация, CRM для недвижимости, amoCRM интеграция, Bitrix24">
+    <meta name="author" content="Rise Staff">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Социальные сети -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://risestaff.ru/">
+    <meta property="og:title" content="Rise Staff — автоматизация найма и обучения">
+    <meta property="og:description" content="Постройте бизнес, который работает без вашего постоянного присутствия. +30% сделок через геймификацию.">
+    <meta property="og:image" content="https://risestaff.ru/img/og-image.jpg">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Rise Staff — автоматизация найма и обучения">
+    <meta name="twitter:description" content="Постройте бизнес, который работает без вашего постоянного присутствия">
+    <meta name="twitter:image" content="https://risestaff.ru/img/og-image.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+    <!-- Canonical URL (предотвращает дублирование) -->
+    <link rel="canonical" href="https://risestaff.ru/">
+
+    <!-- Гео-метки (для локального SEO) -->
+    <meta name="geo.region" content="RU">
+    <meta name="geo.placename" content="Moscow">
+
+    <!-- Верификация для поисковых систем -->
+    <meta name="yandex-verification" content="ваш_код_яндекс">
+    <meta name="google-site-verification" content="ваш_код_google">
     <title>Rise_Staff — Система для найма и роста риелторов</title>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/hero.css" />
@@ -38,15 +70,20 @@
     <header class="header">
       <div class="container">
         <nav class="nav">
-          <a href="#" class="nav__logo">
+          <a href="#" class="nav__logo--block">
             <img
               src="img/logo.png"
               alt="Rise_Staff"
               width="70px"
               height="60px"
+              loading="lazy"
             />
-          </a>
 
+<div>
+          <span class="nav__logo">Rise</span>
+              <span class="nav__logo nav__logo-accent">_Staff</span>
+</div>
+</a>
           <div class="nav__menu">
             <a href="#hero" class="nav__link">Главная</a>
             <a href="#problems" class="nav__link">Проблемы</a>
@@ -106,6 +143,7 @@
                   src="img/foto2.png"
                   alt="Дашборд руководителя"
                   class="hero-card__img"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -117,6 +155,7 @@
                   src="img/foto3.png"
                   alt="Карта развития"
                   class="hero-card__img"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -128,6 +167,7 @@
                   src="img/foto4.png"
                   alt="Система заданий"
                   class="hero-card__img"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -139,6 +179,7 @@
                   src="img/grafik.png"
                   alt="Дашборд руководителя"
                   class="hero-card__img"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -150,6 +191,7 @@
                   src="img/rekomen.png"
                   alt="Дашборд руководителя"
                   class="hero-card__img"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -160,6 +202,7 @@
                   src="img/rezume.png"
                   alt="Дашборд руководителя"
                   class="hero-card__img"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -320,6 +363,7 @@
                 src="img/hek.png"
                 alt="Отбор по делам"
                 class="solution-grid__img"
+                loading="lazy"
               />
               <div class="solution-grid__badge">Шаг 1</div>
               <div class="solution-grid__stat">
@@ -353,8 +397,9 @@
             <div class="solution-grid__visual">
               <img
                 src="img/demonst.png"
-                alt="План на 90 дней"
+                alt="План"
                 class="solution-grid__img"
+                loading="lazy"
               />
               <div class="solution-grid__badge">Шаг 2</div>
               <div class="solution-grid__stat">
@@ -366,7 +411,7 @@
             </div>
             <div class="solution-grid__content">
               <h3 class="solution-grid__title">
-                Четкий план на первые 90 дней
+                Четкий план на весь период работы у Вас в компании
               </h3>
               <p class="solution-grid__description">
                 Новый риелтор получает пошаговый план: что изучать, какие задачи
@@ -392,6 +437,7 @@
                 src="img/marafon.png"
                 alt="Рост как игра"
                 class="solution-grid__img"
+                loading="lazy"
               />
               <div class="solution-grid__badge">Шаг 3</div>
               <div class="solution-grid__stat">
@@ -700,15 +746,17 @@
           <div class="benefit-icon" style="background: linear-gradient(135deg, #FF6B6B, #F03E3E)">
             <i class="fas fa-plug"></i>
           </div>
-          <div class="integration-badge">New</div>
+          <div class="integration-badge"> Скоро</div>
         </div>
         <h3 class="benefit-title">Интеграция amoCRM</h3>
         <p class="benefit-description">Синхронизация сделок, контактов и задач. Вся информация в одном месте</p>
         <div class="integration-demo">
-          <span class="integration-status status-active">
-            <i class="fas fa-circle"></i> Активно
+          <span class="integration-status status-soon">
+            <i class="fas fa-clock"></i> В разработке
           </span>
-          <a href="#" class="integration-link">Подробнее <i class="fas fa-arrow-right"></i></a>
+          <button class="notify-btn" onclick="openSideModal()">
+            <i class="fas fa-bell"></i> Уведомить
+          </button>
         </div>
       </div>
 
@@ -732,7 +780,7 @@
         </div>
       </div>
     </div>
-
+</div>
     <!-- Дополнительный блок с результатами -->
     <div class="benefits-results">
       <div class="result-item">
@@ -763,7 +811,7 @@
         </div>
       </div>
     </div>
-  </div>
+
 </section>
 
 <section class="faq-section">
@@ -1301,6 +1349,7 @@
     <script src="js/modal.js"></script>
     <script src="js/telegram_bot.js"></script>
     <script src="js/accardion.js"></script>
+    <script src="js/schema.js"></script>
     <script src="js/main.js"></script>
 
   </body>

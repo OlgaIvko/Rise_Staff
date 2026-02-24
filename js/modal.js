@@ -136,6 +136,35 @@ class SideDemoModal {
       clearTimeout(this.miniTimer);
       this.miniTimer = null;
     }
+
+    // ПРОВЕРКА: если заявка уже отправлена - не открываем
+    if (localStorage.getItem("demoRequested") === "true") {
+      console.log("⏭️ Заявка уже отправлена, модалка не открывается");
+      return;
+    }
+
+    this.overlay.classList.add("active");
+    document.body.style.overflow = "hidden";
+    console.log("✅ Модальное окно открыто");
+
+    // Сбрасываем состояние формы
+    if (this.form) this.form.reset();
+    if (this.consent) this.consent.checked = false;
+    if (this.submitBtn) {
+      this.submitBtn.disabled = true;
+      this.submitBtn.style.opacity = "0.6";
+    }
+    if (this.success) this.success.style.display = "none";
+    if (this.form) this.form.style.display = "block";
+
+    // Скрываем мини-версию
+    this.hideMini();
+
+    // Отменяем запланированный показ мини
+    if (this.miniTimer) {
+      clearTimeout(this.miniTimer);
+      this.miniTimer = null;
+    }
   }
 
   close() {
@@ -151,7 +180,17 @@ class SideDemoModal {
     if (this.miniTimer) {
       clearTimeout(this.miniTimer);
     }
+    // ПРОВЕРКА: если заявка уже отправлена - не планируем
+    if (localStorage.getItem("demoRequested") === "true") {
+      console.log("⏭️ Заявка уже отправлена, мини-модалка не планируется");
+      return;
+    }
 
+    this.miniTimer = setTimeout(() => {
+      if (!this.isOpen() && !sessionStorage.getItem("miniModalClosed")) {
+        this.showMini();
+      }
+    }, delay);
     const demoRequested = localStorage.getItem("demoRequested");
 
     if (demoRequested) {
@@ -167,6 +206,25 @@ class SideDemoModal {
   }
 
   showMini() {
+    if (
+      this.miniModal &&
+      !sessionStorage.getItem("miniModalClosed") &&
+      !this.isOpen()
+    ) {
+      this.miniModal.classList.add("show");
+      console.log("✅ Мини-модалка показана");
+
+      setTimeout(() => {
+        this.hideMini();
+        this.scheduleNextMini(60000);
+      }, 15000);
+    }
+
+    if (localStorage.getItem("demoRequested") === "true") {
+      console.log("⏭️ Заявка уже отправлена, мини-модалка не показывается");
+      return;
+    }
+
     if (
       this.miniModal &&
       !sessionStorage.getItem("miniModalClosed") &&
@@ -222,6 +280,59 @@ class SideDemoModal {
 
     document.addEventListener("mouseleave", (e) => {
       if (sessionStorage.getItem("sideExitPopup") || demoRequested) return;
+
+      if (e.clientY < 0 && !this.isOpen()) {
+        this.open();
+        sessionStorage.setItem("sideExitPopup", "true");
+      }
+    });
+
+    // ПРОВЕРКА: если заявка уже отправлена - ничего не настраиваем
+    if (localStorage.getItem("demoRequested") === "true") {
+      console.log("⏭️ Заявка уже отправлена, автопоказ отключен");
+      return;
+    }
+
+    setTimeout(() => {
+      if (!sessionStorage.getItem("miniModalClosed")) {
+        this.showMini();
+      }
+    }, 10000);
+
+    setTimeout(() => {
+      if (
+        !sessionStorage.getItem("sidePopupShown") &&
+        !localStorage.getItem("demoRequested")
+      ) {
+        this.open();
+        sessionStorage.setItem("sidePopupShown", "true");
+      }
+    }, 45000);
+
+    window.addEventListener("scroll", () => {
+      if (
+        sessionStorage.getItem("sideScrollPopup") ||
+        localStorage.getItem("demoRequested") === "true"
+      )
+        return;
+
+      const scrollPercent =
+        (window.scrollY /
+          (document.documentElement.scrollHeight - window.innerHeight)) *
+        100;
+
+      if (scrollPercent > 60 && !this.isOpen()) {
+        this.open();
+        sessionStorage.setItem("sideScrollPopup", "true");
+      }
+    });
+
+    document.addEventListener("mouseleave", (e) => {
+      if (
+        sessionStorage.getItem("sideExitPopup") ||
+        localStorage.getItem("demoRequested") === "true"
+      )
+        return;
 
       if (e.clientY < 0 && !this.isOpen()) {
         this.open();
@@ -535,4 +646,49 @@ document.addEventListener("DOMContentLoaded", function () {
       miniModal.classList.add("show");
     }
   }, 10000);
+
+  // В самом конце файла, в простом обработчике:
+  document.addEventListener("DOMContentLoaded", function () {
+    console.log("🔄 Запуск простого обработчика");
+
+    const form = document.getElementById("sideModalForm");
+
+    if (!form) {
+      console.error("❌ Форма не найдена");
+      return;
+    }
+
+    console.log("✅ Форма найдена");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      console.log("📤 Отправка формы");
+
+      const consent = document.getElementById("modalConsent");
+
+      if (!consent || !consent.checked) {
+        alert("Нужно согласиться");
+        return;
+      }
+
+      // СОХРАНЯЕМ В LOCALSTORAGE ЧТО ЗАЯВКА ОТПРАВЛЕНА
+      localStorage.setItem("demoRequested", "true");
+      localStorage.setItem("demoRequestTime", new Date().toISOString());
+
+      // Показываем сообщение об отправке
+      const formElement = document.getElementById("sideModalForm");
+      const successElement = document.getElementById("sideModalSuccess");
+
+      if (formElement && successElement) {
+        formElement.style.display = "none";
+        successElement.style.display = "block";
+      }
+
+      // Отправляем форму стандартным способом
+      this.submit();
+
+      console.log("✅ Заявка отправлена, модалки больше не появятся");
+    });
+  });
 });

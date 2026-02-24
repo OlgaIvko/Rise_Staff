@@ -110,11 +110,18 @@ section {
   align-items: center;
 }
 
+.nav__logo--block {
+  display: flex;
+  text-decoration: none;
+  align-items: center;
+}
+
 .nav__logo {
   font-size: 1.8rem;
   font-weight: 800;
   text-decoration: none;
   color: var(--primary);
+  text-align: center;
 }
 
 .nav__logo-accent {
@@ -851,7 +858,7 @@ section {
 /* Demo */
 .demo {
   background: var(--bg-light);
-  margin-bottom: 105px;
+  margin-bottom: 276px;
 }
 
 .demo-slide__HH {
