@@ -525,7 +525,7 @@ document.addEventListener("DOMContentLoaded", function () {
         setTimeout(() => {
           const closeBtn = document.getElementById("closeSideModalBtn");
           if (closeBtn) closeBtn.click();
-        }, 1500);
+        }, 3500);
       } else {
         alert("❌ Ошибка отправки");
         newButton.disabled = false;
