@@ -1053,20 +1053,27 @@
     <input type="email" class="form__input" name="email" placeholder="Email (необязательно)" />
   </div>
 
-  <!-- ЧЕКБОКС СОГЛАСИЯ -->
-  <div class="form__group form__group--consent">
-    <label class="consent-label">
-      <input type="checkbox" name="consent" id="formConsent" required class="consent-checkbox">
-      <span class="consent-checkmark"></span>
-      <span class="consent-text">
-        Я соглашаюсь на
-        <a href="#" id="showPrivacyPolicyForm" class="consent-link">
-          обработку персональных данных
-        </a>
-        и получение информационных рассылок
-      </span>
-    </label>
-  </div>
+           <!-- ЧЕКБОКС СОГЛАСИЯ - ИСПРАВЛЕННЫЙ (ОДИН) -->
+          <div class="form__group form__group--consent">
+            <label class="consent-label">
+              <input
+                type="checkbox"
+                name="consent"
+                id="formConsent"
+                required
+                class="consent-checkbox"
+              >
+              <span class="consent-checkmark"></span>
+              <span class="consent-text">
+                Я даю
+                <a href="/privacy-policy.html" target="_blank" class="consent-link">
+                  согласие
+                </a>
+                на обработку моих персональных данных и получение информационных рассылок
+              </span>
+            </label>
+          </div>
+
 
   <div class="form__btn">
     <button type="submit" class="btn btn--primary btn--block" id="formSubmitBtn" disabled>
@@ -1078,7 +1085,7 @@
 
     <!-- СОЦИАЛЬНЫЕ КНОПКИ -->
     <div class="social-buttons">
-      <a href="https://wa.me/77765086000?text=Здравствуйте!%20Хочу%20узнать%20подробнее%20о%20Rise%20Staff"
+      <a href="https://wa.me/77765086000"
          class="btn btn--whatsapp btn--block"
          target="_blank"
          rel="noopener noreferrer">
@@ -1153,29 +1160,38 @@
               </div>
               <div class="footer__contact-item">
                 <i class="fas fa-envelope"></i>
-                <span>hello@rise-staff.kz</span>
+                <span>ceo@risestaff.kz
+</span>
+              </div>
+              <div class="footer__contact-item">
+
+                <span>адрес г Астана ул Иманова, дом 18, офис 2
+</span>
               </div>
             </div>
 
+
             <div class="footer__social">
-              <a href="#" class="footer__social-link">
+              <a href="https://t.me/SaasTeamRise" class="footer__social-link">
                 <i class="fab fa-telegram"></i>
               </a>
-              <a href="#" class="footer__social-link">
-                <i class="fab fa-instagram"></i>
-              </a>
-              <a href="#" class="footer__social-link">
+             <a href="https://www.instagram.com/rise.forbusiness" target="_blank" rel="noopener noreferrer" class="footer__social-link">
+  <i class="fab fa-instagram"></i>
+</a>
+              <!-- <a href="#" class="footer__social-link">
                 <i class="fab fa-youtube"></i>
-              </a>
+              </a> -->
             </div>
           </div>
         </div>
 
         <div class="footer__bottom">
           <p class="footer__copyright">© 2024 Rise_Staff. Все права защищены.</p>
-          <a href="#" class="footer__bottom-link"
-            >Политика конфиденциальности</a
-          >
+          <a class="footer__bottom-link" href="/privacy-policy.html" target="_blank">Политика конфиденциальности</a>
+<div class="footer-links">
+  <a class="footer__bottom-link" href="/privacy-policy.docx" download>Скачать политику конфиденциальности (DOCX)</a>
+</div>
+
         </div>
       </div>
     </footer>
@@ -1227,7 +1243,10 @@
                 обработку персональных данных
               </a>
             </span>
-          </label>
+              </label>
+            <!-- Добавьте в вашу форму этот блок -->
+
+
         </div>
 <div class="side-modal-actions">
 
